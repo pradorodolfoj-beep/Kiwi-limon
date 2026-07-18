@@ -1,0 +1,479 @@
+/* --- CONFIGURACIÓN DE BASE --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding-bottom: 110px; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 12px 16px;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.brand-sub {
+    color: #a3e635;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-nav {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.hero-banner {
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.hero-banner h2 {
+    color: #a3e635;
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+}
+
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #1a1a1a;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    text-decoration: none;
+    border: 1px solid #333333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.location-btn:hover {
+    border-color: #a3e635;
+    color: #a3e635;
+    background-color: rgba(163, 230, 53, 0.05);
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS ADICIONALES ADMIN --- */
+.admin-container {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.admin-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.persistence-action {
+    margin-bottom: 20px;
+}
+
+.btn-db-save {
+    width: 100%;
+    background-color: #a3e635;
+    color: #000000;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(163, 230, 53, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-db-save:active {
+    transform: scale(0.98);
+}
+
+/* --- DISEÑO DE CAMPOS DE TEXTO --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    background-color: #222222;
+    border: 1px solid #3d3d3d;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #a3e635;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(163, 230, 53, 0.2);
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.product-card {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2d2d2d;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+}
+
+.product-desc {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    color: #a3e635;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.btn-add-to-cart {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- MODALES CENTRALES --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 380px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border: 1px solid #333;
+}
+
+.modal-content h4 {
+    margin: 0 0 12px 0;
+    color: #a3e635;
+    font-size: 1.2rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-success { background-color: #a3e635; color: black; font-weight: bold; border: none; padding: 12px; border-radius: 8px; flex: 1; cursor: pointer; }
+.btn-secondary { background-color: #2b2b2b; color: white; border: none; padding: 12px; border-radius: 8px; flex: 1; cursor: pointer; }
+.btn-danger { background-color: #ef4444; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+
+/* --- TABLA ADMINISTRACIÓN --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.admin-table th, .admin-table td {
+    padding: 10px;
+    border-bottom: 1px solid #2d2d2d;
+    text-align: left;
+}
+
+/* --- SECCIÓN DE BOTONES DE DELIVERY --- */
+.delivery-box {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #2d2d2d;
+}
+
+.delivery-title {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.delivery-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.btn-delivery-opt {
+    flex: 1;
+    background-color: #222;
+    border: 1px solid #3a3a3a;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-delivery-opt.active {
+    background-color: rgba(163, 230, 53, 0.15);
+    border-color: #a3e635;
+    color: #a3e635;
+}
+
+/* --- BARRA FLOTANTE INFERIOR MODERNA --- */
+.bottom-cart-bar {
+    position: fixed;
+    bottom: 16px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 380px;
+    background-color: rgba(26, 26, 26, 0.9); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 16px; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 950;
+}
+
+.bottom-cart-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#bottom-cart-items-text {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#bottom-cart-total-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #a3e635; 
+}
+
+.btn-view-cart {
+    background-color: #a3e635;
+    color: #000000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-view-cart:active {
+    transform: scale(0.96); 
+    background-color: #8ed026;
+}
+
+/* --- CAJÓN LATERAL (DRAWER) --- */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background-color: #161616;
+    z-index: 1010;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    padding: 16px;
+    border-bottom: 1px solid #2d2d2d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close-drawer {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.drawer-body {
+    padding: 16px;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-bottom: 60px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    background: #222;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.drawer-footer {
+    padding: 16px;
+    border-top: 1px solid #2d2d2d;
+    background-color: #1a1a1a;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.btn-checkout-send {
+    width: 100%;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
