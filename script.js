@@ -381,7 +381,7 @@ function sendOrderWhatsApp() {
 
     text += `\n*💰 TOTAL A PAGAR: $${total.toFixed(2)}*`;
 
-    const storePhone = "584120000000"; 
+    const storePhone = "584128731016"; 
     window.open(`https://api.whatsapp.com/send?phone=${storePhone}&text=${encodeURIComponent(text)}`, '_blank');
     
     currentDeliveryOption = '';
