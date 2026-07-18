@@ -1,0 +1,64 @@
+/* === CORRECCIÓN DE VISIBILIDAD DE VISTAS === */
+
+/* Por defecto, el panel de administración debe estar oculto para los clientes */
+#admin-view {
+    display: none;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    margin: 15px;
+}
+
+/* El formulario de añadir productos debe verse limpio */
+#product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#product-form input, 
+#product-form textarea, 
+#product-form select {
+    width: 100%;
+    padding: 10px;
+    background: #252525;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* El carrito lateral (Drawer) debe estar oculto a la derecha y solo salir al activarse */
+#cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido fuera de la pantalla */
+    width: 85%;
+    max-width: 400px;
+    height: 100vh;
+    background: #1e1e1e;
+    z-index: 9999;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Clase que activa el JavaScript para abrir el carrito */
+#cart-drawer.open {
+    right: 0; 
+}
+
+/* Fondo oscuro decorativo cuando el carrito o modales estén abiertos */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+}
