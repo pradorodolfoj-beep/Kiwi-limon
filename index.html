@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi Limón - Menú Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado / Navbar -->
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="https://images.unsplash.com/photo-1610832958506-ee5633619144?w=100&auto=format&fit=crop" class="logo-img" alt="Kiwi Limón">
+            <span class="brand-name">Kiwi <span class="brand-sub">Limón</span></span>
+        </div>
+        <div class="nav-buttons">
+            <button id="btn-toggle-view" class="btn-nav">⚙️ Admin</button>
+            <button id="btn-open-cart" class="btn-nav btn-cart-nav">🛒 <span id="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner">
+        <h2>¡Hacemos delicias con frutas!</h2>
+        <a href="https://www.google.com/maps/search/Casa+La+Vi%C3%B1a+Valencia" target="_blank" class="location-btn">
+            📍 Casa La Viña, Valencia
+        </a>
+    </section>
+
+    <!-- VISTA DEL CLIENTE (Menú) -->
+    <main id="customer-view" class="view-section">
+        <div id="menu-container" class="menu-grid">
+            <!-- Dinámico por JS -->
+        </div>
+    </main>
+
+    <!-- VISTA DEL ADMINISTRADOR (Panel) -->
+    <main id="admin-view" class="view-section" style="display: none;">
+        <div class="admin-container">
+            <div class="admin-header-row">
+                <h3>Panel de Administración</h3>
+                <button id="btn-logout-admin" class="btn-danger">Cerrar Sesión</button>
+            </div>
+            
+            <div class="persistence-action">
+                <button id="btn-save-database" class="btn-db-save">💾 Guardar Cambios Permanentes</button>
+            </div>
+
+            <div id="admin-status-message" class="admin-status-box" style="display: none;">
+                <p id="admin-status-text" style="margin: 0 0 10px 0; font-weight: bold; color: #a3e635;"></p>
+                <textarea id="admin-code-output" readonly style="font-family: monospace; font-size: 0.85rem; height: 120px; resize: none; background: #111; border: 1px solid #444; margin-bottom: 10px;"></textarea>
+                <button type="button" id="btn-copy-code" class="btn-nav" style="width: 100%; background: #333; border-color: #555;">📋 Copiar Código al Portapapeles</button>
+            </div>
+            
+            <form id="product-form" class="admin-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label>Nombre del Producto *</label>
+                    <input type="text" id="prod-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción *</label>
+                    <textarea id="prod-desc" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Precio ($) *</label>
+                    <input type="number" id="prod-price" step="0.01" required>
+                </div>
+                
+                <!-- Opción de peso ajustable corregida sin límite de kilos -->
+                <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin: 10px 0;">
+                    <input type="checkbox" id="prod-is-weight" style="width: auto; cursor: pointer;">
+                    <label for="prod-is-weight" style="cursor: pointer; font-weight: bold; color: #a3e635;">¿Vender por peso? (Kilogramos sin límites)</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Ruta o URL de la Imagen</label>
+                    <input type="text" id="prod-image-url" placeholder="Dejar vacío para usar por defecto">
+                </div>
+                <div class="form-group">
+                    <label>Adicionales (Formato: Nombre+Precio)</label>
+                    <input type="text" id="prod-addons" placeholder="Ejemplo: Helado Extra+2.00, Queso+1.50">
+                </div>
+                <div class="form-group">
+                    <label>Ingredientes removibles</label>
+                    <input type="text" id="prod-removals" placeholder="Ejemplo: Sin Cambur, Sin Azúcar">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">Añadir/Modificar en Lista</button>
+                    <button type="button" id="btn-cancel-edit" class="btn-secondary" style="display: none;">Cancelar Edición</button>
+                </div>
+            </form>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Producto</th>
+                            <th>Precio Base</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <!-- Dinámico -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Barra Inferior Flotante del Carrito -->
+    <div id="bottom-cart-bar" class="bottom-cart-bar" style="display: none;">
+        <div class="bottom-cart-info">
+            <span id="bottom-cart-items-text">0 productos añadidos</span>
+            <span id="bottom-cart-total-text" class="total-price">$0.00</span>
+        </div>
+        <button class="btn-view-cart">Ver Carrito 🛒</button>
+    </div>
+
+    <div id="overlay" class="overlay" style="display: none;"></div>
+
+    <!-- Modal Login -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h4>Ingreso Administrador</h4>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-success">Entrar</button>
+                    <button type="button" id="btn-close-login" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Personalización -->
+    <div id="custom-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h4 id="custom-modal-title">Personalizar Producto</h4>
+            <p id="custom-modal-price" class="modal-base-price"></p>
+            
+            <!-- Contenedor interactivo de kilogramos sin limitante máximo -->
+            <div id="custom-weight-container" class="form-group" style="display: none; background: #1e293b; padding: 14px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 15px;">
+                <label style="color: #a3e635; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.9rem;">Cantidad de fruta deseada:</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="number" id="custom-weight-input" step="0.001" min="0.001" value="1.000" style="margin: 0; text-align: center; width: 110px !important; flex: none;">
+                    <span style="font-weight: bold; color: #fff; font-size: 1.1rem;">Kg</span>
+                </div>
+                <small style="color: #94a3b8; font-size: 0.75rem; display: block; margin-top: 6px;">Elige la cantidad exacta que necesites desde 1g (0.001 kg) en adelante.</small>
+            </div>
+
+            <div id="custom-addons-container" class="options-container"></div>
+            <div id="custom-removals-container" class="options-container"></div>
+
+            <div class="modal-actions">
+                <button id="btn-confirm-custom" class="btn-success">Agregar al Carrito</button>
+                <button id="btn-close-custom" class="btn-secondary">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+            <h3>Tu Pedido</h3>
+            <button id="btnCloseCart" class="btn-close-drawer">✕</button>
+        </div>
+        <div id="cart-items-container" class="drawer-body"></div>
+
+        <div id="delivery-box" class="delivery-box" style="display: none;">
+            <p class="delivery-title">¿Cómo deseas recibir tu pedido?</p>
+            <div class="delivery-options">
+                <button id="btn-opt-pickup" type="button" class="btn-delivery-opt">🛍️ Pick Up</button>
+                <button id="btn-opt-delivery" type="button" class="btn-delivery-opt">🛵 Delivery</button>
+            </div>
+            <form id="customer-data-form" class="customer-form" style="display: none;">
+                <div class="form-group"><input type="text" id="cust-fullname" placeholder="Nombre y Apellido *" required></div>
+                <div class="form-group"><input type="text" id="cust-cedula" placeholder="Cédula de Identidad *" required></div>
+                <div class="form-group"><input type="tel" id="cust-phone" placeholder="Teléfono *" required></div>
+                <div class="form-group"><input type="text" id="cust-address" placeholder="Dirección de Entrega *" style="display: none;"></div>
+            </form>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="total-row"><span>Total:</span><span id="cart-total-amount">$0.00</span></div>
+            <button id="btn-checkout" class="btn-checkout-send">Enviar Pedido a WhatsApp 🚀</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
