@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================================================
-// 2. RENDERIZADO DEL MENÚ DEL CLIENTE (MANTIENE TU DISEÑO ORIGINAL)
+// 2. RENDERIZADO DEL MENÚ DEL CLIENTE (RESTAURADO AL DISEÑO EXACTO ORIGINAL)
 // ==========================================================================
 function renderCustomerMenu() {
     const container = document.getElementById("menu-container");
@@ -63,7 +63,7 @@ function renderCustomerMenu() {
                 <p class="product-desc">${prod.desc}</p>
                 <div class="product-footer">
                     <span class="product-price">$${Number(prod.price).toFixed(2)}${priceSuffix}</span>
-                    <button class="btn-pedir" onclick="window.openCustomizationModal(${prod.id})">Agregar ➕</button>
+                    <button class="btn-success" onclick="window.openCustomizationModal(${prod.id})">Agregar ➕</button>
                 </div>
             </div>
         `;
@@ -395,6 +395,9 @@ function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
+// ==========================================================================
+// 6. PROCESAMIENTO Y ENVÍO DEL PEDIDO A WHATSAPP
+// ==========================================================================
 function openCartDrawer() {
     document.getElementById("cart-drawer").classList.add("open");
     document.getElementById("overlay").style.display = "block";
@@ -407,9 +410,6 @@ function closeCartDrawer() {
     }
 }
 
-// ==========================================================================
-// 6. PROCESAMIENTO Y ENVÍO DEL PEDIDO A WHATSAPP
-// ==========================================================================
 function sendOrderWhatsApp() {
     if (cart.length === 0) return;
     if (!currentDeliveryOption) { alert("Selecciona Pick Up o Delivery."); return; }
@@ -548,4 +548,4 @@ function resetProductForm() {
     document.getElementById("product-form").reset();
     document.getElementById("edit-id").value = "";
     document.getElementById("btn-cancel-edit").style.display = "none";
-        }
+}
