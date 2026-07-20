@@ -5,7 +5,7 @@ const defaultProducts = [
         name: "Ensalada de Frutas Suprema",
         desc: "Deliciosa mezcla de fresas, cambur, kiwi y melón, bañada con leche condensada y queso rallado.",
         price: 4.50,
-        image: "imágenes/image.jpg",
+        image: "image/image.jpg",
         addons: ["Helado Extra+1.50", "Chocolate+1.00"],
         removals: ["Sin Leche Condensada", "Sin Queso"]
     },
