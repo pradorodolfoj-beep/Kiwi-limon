@@ -42,41 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================================================
-// 2. RENDERIZADO DEL MENÚ DEL CLIENTE (CON BOTÓN LLAMATIVO OPTIMIZADO)
+// 2. RENDERIZADO DEL MENÚ DEL CLIENTE (MANTIENE TU DISEÑO ORIGINAL)
 // ==========================================================================
 function renderCustomerMenu() {
     const container = document.getElementById("menu-container");
     if (!container) return;
-    
-    // Inyección automática del diseño premium del botón "Pedir"
-    if (!document.getElementById("premium-btn-styles")) {
-        const styles = document.createElement("style");
-        styles.id = "premium-btn-styles";
-        styles.innerHTML = `
-            .btn-pedir-premium {
-                background: linear-gradient(135deg, #ff9f43, #ff5252);
-                color: #ffffff;
-                border: none;
-                padding: 10px 20px;
-                font-size: 14px;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 4px 12px rgba(255, 82, 82, 0.4);
-                transition: all 0.2s ease-in-out;
-                -webkit-tap-highlight-color: transparent;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .btn-pedir-premium:active {
-                transform: scale(0.93);
-                box-shadow: 0 2px 6px rgba(255, 82, 82, 0.2);
-                background: linear-gradient(135deg, #e68a30, #e64545);
-            }
-        `;
-        document.head.appendChild(styles);
-    }
 
     container.innerHTML = "";
 
@@ -93,7 +63,7 @@ function renderCustomerMenu() {
                 <p class="product-desc">${prod.desc}</p>
                 <div class="product-footer">
                     <span class="product-price">$${Number(prod.price).toFixed(2)}${priceSuffix}</span>
-                    <button class="btn-pedir-premium" onclick="window.openCustomizationModal(${prod.id})">Pedir ➕</button>
+                    <button class="btn-pedir" onclick="window.openCustomizationModal(${prod.id})">Agregar ➕</button>
                 </div>
             </div>
         `;
@@ -287,20 +257,18 @@ function setupEventListeners() {
         };
     }
 
-    // ACCIÓN CORREGIDA: Copiar código generado al portapapeles
     if (btnCopyCode) {
         btnCopyCode.onclick = () => {
             const codeOutput = document.getElementById("admin-code-output");
             if (codeOutput && codeOutput.value.trim() !== "") {
                 codeOutput.select();
-                codeOutput.setSelectionRange(0, 99999); // Para móviles
+                codeOutput.setSelectionRange(0, 99999);
                 
                 navigator.clipboard.writeText(codeOutput.value)
                     .then(() => {
                         alert("📋 ¡Código copiado con éxito para tu GitHub!");
                     })
-                    .catch(err => {
-                        // Alternativa por si falla el portapapeles nativo en navegadores antiguos de celular
+                    .catch(() => {
                         document.execCommand("copy");
                         alert("📋 ¡Código copiado con éxito!");
                     });
@@ -432,9 +400,6 @@ function openCartDrawer() {
     document.getElementById("overlay").style.display = "block";
 }
 
-// ==========================================================================
-// 6. PROCESAMIENTO Y ENVÍO DEL PEDIDO A WHATSAPP
-// ==========================================================================
 function closeCartDrawer() {
     document.getElementById("cart-drawer").classList.remove("open");
     if(document.getElementById("custom-modal").style.display !== "block" && document.getElementById("login-modal").style.display !== "block") {
@@ -442,6 +407,9 @@ function closeCartDrawer() {
     }
 }
 
+// ==========================================================================
+// 6. PROCESAMIENTO Y ENVÍO DEL PEDIDO A WHATSAPP
+// ==========================================================================
 function sendOrderWhatsApp() {
     if (cart.length === 0) return;
     if (!currentDeliveryOption) { alert("Selecciona Pick Up o Delivery."); return; }
@@ -456,7 +424,7 @@ function sendOrderWhatsApp() {
         return;
     }
 
-let text = `*🍉 NUEVO PEDIDO - KIWI LIMÓN 🍋*\n\n`;
+    let text = `*🍉 NUEVO PEDIDO - KIWI LIMÓN 🍋*\n\n`;
     text += `*Cliente:* ${name}\n*Cédula:* ${idCard}\n*Modalidad:* ${currentDeliveryOption === 'pickup' ? '🛍️ Pick Up' : '🛵 Delivery'}\n`;
     if (currentDeliveryOption === 'delivery') text += `*Dirección:* ${address}\n`;
     
@@ -580,4 +548,4 @@ function resetProductForm() {
     document.getElementById("product-form").reset();
     document.getElementById("edit-id").value = "";
     document.getElementById("btn-cancel-edit").style.display = "none";
-}
+        }
