@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi Limón - Menú Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR PRINCIPAL -->
+    <header class="navbar">
+        <div class="logo-area" onclick="toggleSidebar(true)">
+            <img src="image/logo.jpg" alt="Logo" class="logo-img">
+            <div>
+                <span class="brand-name">Kiwi</span><span class="brand-sub">Limón</span>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-nav" id="btn-toggle-view">⚙️ Admin</button>
+            <button class="btn-nav btn-cart-nav" id="btn-open-cart">🛒 <span id="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <!-- SIDEBAR DE CATEGORÍAS -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+    <aside class="category-sidebar" id="category-sidebar">
+        <div class="sidebar-header">
+            <h4>Categorías</h4>
+            <button class="btn-close-sidebar" onclick="toggleSidebar(false)">&times;</button>
+        </div>
+        <div class="sidebar-body">
+            <a href="#cat-Panquecas" onclick="toggleSidebar(false)">Panquecas</a>
+            <a href="#cat-Sandwiches" onclick="toggleSidebar(false)">Sandwiches</a>
+            <a href="#cat-Omelette" onclick="toggleSidebar(false)">Omelette</a>
+            <a href="#cat-Snack-y-saludable" onclick="toggleSidebar(false)">Snack y saludable</a>
+            <a href="#cat-Acai-bowl" onclick="toggleSidebar(false)">Acai bowl</a>
+            <a href="#cat-Michell-parfait" onclick="toggleSidebar(false)">Michell parfait</a>
+            <a href="#cat-Bowl" onclick="toggleSidebar(false)">Bowl</a>
+            <a href="#cat-Ensaladas" onclick="toggleSidebar(false)">Ensaladas</a>
+            <a href="#cat-Fresas-con-crema" onclick="toggleSidebar(false)">Fresas con crema</a>
+            <a href="#cat-Tizanas" onclick="toggleSidebar(false)">Tizanas</a>
+            <a href="#cat-Jugos-Básicos" onclick="toggleSidebar(false)">Jugos Básicos</a>
+            <a href="#cat-Jugos-duplicados" onclick="toggleSidebar(false)">Jugos duplicados</a>
+            <a href="#cat-Limonadas" onclick="toggleSidebar(false)">Limonadas</a>
+            <a href="#cat-Smoothies" onclick="toggleSidebar(false)">Smoothies</a>
+            <a href="#cat-Especiales" onclick="toggleSidebar(false)">Especiales</a>
+            <a href="#cat-Cafés" onclick="toggleSidebar(false)">Cafés</a>
+            <a href="#cat-Infusiones" onclick="toggleSidebar(false)">Infusiones</a>
+            <a href="#cat-Detox" onclick="toggleSidebar(false)">Detox</a>
+            <a href="#cat-Frutas" onclick="toggleSidebar(false)">Frutas</a>
+        </div>
+    </aside>
+
+    <!-- VISTA DEL CLIENTE (MENÚ) -->
+    <main id="customer-view">
+        <section class="hero-banner">
+            <h2>!Hacemos delicias con frutas! 🥝🍋</h2>
+            <a href="https://maps.google.com" target="_blank" class="location-btn">📍 Ver ubicación en el mapa</a>
+        </section>
+
+        <div class="products-container" id="menu-sections-container">
+            <!-- Los productos se cargan dinámicamente aquí por categorías -->
+        </div>
+    </main>
+
+    <!-- VISTA DE ADMINISTRADOR -->
+    <div id="admin-view" style="display: none;" class="admin-container">
+        
+        <!-- Cabecera del Panel Admin -->
+        <div class="admin-header-row">
+            <div>
+                <h2>Panel de Administración ⚙️</h2>
+                <p class="admin-subtitle">Gestiona tu menú y base de datos</p>
+            </div>
+            <div>
+                <button class="btn-secondary" id="btn-save-database" style="font-size:0.8rem; padding:8px 12px;">💾 Guardar Cambios</button>
+                <button class="btn-danger" id="btn-logout-admin" style="font-size:0.8rem; padding:8px 12px;">🚪 Cerrar Sesión</button>
+            </div>
+        </div>
+
+        <!-- Formulario de Creación / Edición de Productos -->
+        <form id="product-form" class="admin-form">
+            <input type="hidden" id="edit-id">
+            
+            <h3 id="form-title-text" style="font-size: 1.05rem; color: var(--accent-kiwi); margin-bottom: 4px;">Agregar / Editar Producto</h3>
+            
+            <div class="form-group">
+                <label for="prod-name">Nombre del Producto *</label>
+                <input type="text" id="prod-name" placeholder="Ej. Ensalada Suprema" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prod-category">Categoría *</label>
+                <select id="prod-category" required>
+                    <option value="">Selecciona una categoría...</option>
+                    <option value="Panquecas">Panquecas</option>
+                    <option value="Sandwiches">Sandwiches</option>
+                    <option value="Omelette">Omelette</option>
+                    <option value="Snack y saludable">Snack y saludable</option>
+                    <option value="Acai bowl">Acai bowl</option>
+                    <option value="Michell parfait">Michell parfait</option>
+                    <option value="Bowl">Bowl</option>
+                    <option value="Ensaladas">Ensaladas</option>
+                    <option value="Fresas con crema">Fresas con crema</option>
+                    <option value="Tizanas">Tizanas</option>
+                    <option value="Jugos Básicos">Jugos Básicos</option>
+                    <option value="Jugos duplicados">Jugos duplicados</option>
+                    <option value="Limonadas">Limonadas</option>
+                    <option value="Smoothies">Smoothies</option>
+                    <option value="Especiales">Especiales</option>
+                    <option value="Cafés">Cafés</option>
+                    <option value="Infusiones">Infusiones</option>
+                    <option value="Detox">Detox</option>
+                    <option value="Frutas">Frutas</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="prod-desc">Descripción</label>
+                <textarea id="prod-desc" rows="2" placeholder="Breve descripción de los ingredientes..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="prod-price">Precio Base ($) *</label>
+                <input type="number" id="prod-price" step="0.01" placeholder="0.00" required>
+            </div>
+
+            <div class="form-checkbox-row">
+                <input type="checkbox" id="prod-is-weight">
+                <label for="prod-is-weight">¿Se vende por peso (Kg)?</label>
+            </div>
+
+            <div class="form-group">
+                <label for="prod-image-url">URL de la Imagen</label>
+                <input type="text" id="prod-image-url" placeholder="https://ejemplo.com/imagen.jpg">
+            </div>
+
+            <div class="form-group">
+                <label for="prod-addons">Adicionales (Formato: Nombre+Precio separados por comas)</label>
+                <input type="text" id="prod-addons" placeholder="Extra Queso+1.50, Topping Choco+0.80">
+            </div>
+
+            <div class="form-group">
+                <label for="prod-removals">Ingredientes removibles (Separados por comas)</label>
+                <input type="text" id="prod-removals" placeholder="Sin Azúcar, Sin Hielo">
+            </div>
+
+            <div class="form-actions-grid">
+                <button type="submit" class="btn-success" style="flex: 2;">Guardar en Lista ➕</button>
+                <button type="button" class="btn-secondary" id="btn-cancel-edit" style="display:none; flex: 1;">Cancelar</button>
+            </div>
+        </form>
+
+        <!-- Tabla de Productos Existentes -->
+        <div class="table-card">
+            <h4>Inventario Actual</h4>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Img</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <!-- Los productos se cargan dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA INFERIOR FLOTANTE DE CARRITO -->
+    <div class="bottom-cart-bar" id="bottom-cart-bar" style="display: none;">
+        <div>
+            <span id="bottom-cart-items-text" style="display:block; font-size:0.78rem; color:var(--text-dim);">0 productos</span>
+            <span id="bottom-cart-total-text" style="font-size:1.1rem; font-weight:800; color:var(--accent-limon);">$0.00</span>
+        </div>
+        <button class="btn-view-cart">Ver Pedido 🛍️</button>
+    </div>
+
+    <!-- OVERLAY GENERAL -->
+    <div class="overlay" id="overlay" style="display: none;"></div>
+
+    <!-- MODAL DE CARRITO / CHECKOUT -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Tu Carrito 🛒</h3>
+            <button class="btn-close-sidebar" id="btnCloseCart">&times;</button>
+        </div>
+        <div class="drawer-body" id="cart-items-container">
+            <!-- Items del carrito -->
+        </div>
+        <div class="drawer-footer">
+            <div id="delivery-box" style="margin-bottom: 12px; display:none;">
+                <p style="font-size:0.85rem; font-weight:700; margin-bottom:8px;">Tipo de entrega:</p>
+                <div style="display:flex; gap:8px;">
+                    <button type="button" class="btn-secondary" id="btn-opt-pickup" style="flex:1; font-size:0.85rem; padding:8px;">🛍️ Pick Up</button>
+                    <button type="button" class="btn-secondary" id="btn-opt-delivery" style="flex:1; font-size:0.85rem; padding:8px;">🛵 Delivery</button>
+                </div>
+            </div>
+
+            <div id="customer-data-form" style="display:none; margin-bottom:12px; display:flex; flex-direction:column; gap:8px;">
+                <input type="text" id="cust-fullname" placeholder="Nombre y Apellido" required>
+                <input type="text" id="cust-cedula" placeholder="Cédula de Identidad" required>
+                <input type="tel" id="cust-phone" placeholder="Teléfono de contacto" required>
+                <textarea id="cust-address" placeholder="Dirección exacta de entrega..." rows="2" style="display:none;"></textarea>
+                <select id="cust-payment-method" required>
+                    <option value="">Selecciona método de pago...</option>
+                    <option value="Pago Móvil">Pago Móvil</option>
+                    <option value="Zelle">Zelle</option>
+                    <option value="Efectivo USD">Efectivo USD</option>
+                    <option value="Punto de Venta">Punto de Venta</option>
+                </select>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <span style="font-size:0.9rem; font-weight:700;">Total a Pagar:</span>
+                <span id="cart-total-amount" style="font-size:1.2rem; font-weight:800; color:var(--accent-limon);">$0.00</span>
+            </div>
+            <button class="btn-success" id="btn-checkout">Enviar Pedido por WhatsApp 📱</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE PERSONALIZACIÓN DE PRODUCTO -->
+    <div class="modal" id="custom-modal" style="display: none;">
+        <div class="modal-content">
+            <h3 id="custom-modal-title" style="margin-bottom: 8px; font-size: 1.1rem; color:var(--accent-kiwi);">Personalizar</h3>
+            
+            <div id="custom-weight-container" style="margin-bottom: 12px; display: none;">
+                <label style="font-size: 0.85rem; font-weight: 700; display:block; margin-bottom:4px;">Peso en Kg:</label>
+                <input type="number" id="custom-weight-input" step="0.001" value="1.000">
+            </div>
+
+            <div id="custom-addons-container" style="margin-bottom: 12px;"></div>
+            <div id="custom-removals-container" style="margin-bottom: 12px;"></div>
+
+            <div id="custom-modal-price" style="margin-bottom: 14px; font-size: 0.95rem;"></div>
+
+            <div style="display: flex; gap: 8px;">
+                <button class="btn-success" id="btn-confirm-custom" style="flex:2;">Añadir al Carrito</button>
+                <button class="btn-secondary" id="btn-close-custom" style="flex:1;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE LOGIN ADMIN -->
+    <div class="modal" id="login-modal" style="display: none;">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 12px; font-size: 1.1rem; color:var(--accent-kiwi);">Acceso Administrativo</h3>
+            <form id="login-form" style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" id="login-username" placeholder="Usuario" required>
+                <input type="password" id="login-password" placeholder="Contraseña" required>
+                <div style="display: flex; gap: 8px; margin-top: 6px;">
+                    <button type="submit" class="btn-success" style="flex: 2;">Entrar</button>
+                    <button type="button" class="btn-secondary" id="btn-close-login" style="flex: 1;">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE EXPORTACIÓN / CÓDIGO NUEVO -->
+    <div class="modal" id="export-modal" style="display: none;">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 8px; font-size: 1.1rem; color:var(--accent-kiwi);">Base de Datos Actualizada</h3>
+            <p style="font-size:0.8rem; color:var(--text-dim); margin-bottom:10px;">Copia este código y reemplaza la constante defaultProducts en tu script.js para guardar los cambios de forma permanente.</p>
+            <textarea id="export-code-area" rows="6" style="font-family:monospace; font-size:0.75rem; margin-bottom:10px;" readonly></textarea>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn-success" id="btn-copy-code" style="flex: 2;">Copiar Código 📋</button>
+                <button class="btn-secondary" onclick="closeModal('export-modal')" style="flex: 1;">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
