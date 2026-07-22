@@ -403,7 +403,7 @@ const defaultProducts = [
         "desc": "Delicioso detox de pepino, celery",
         "price": 3.5,
         "isWeight": false,
-        "image": "image/don verde.jpg",
+        "image": "image/donverde.jpg",
         "addons": [],
         "removals": [
             "Sin azucar"
@@ -416,7 +416,7 @@ const defaultProducts = [
         "desc": "Hermosas fresas",
         "price": 12,
         "isWeight": true,
-        "image": "image/fresa.jgp",
+        "image": "image/fresa.jpg",
         "addons": [],
         "removals": []
     },
