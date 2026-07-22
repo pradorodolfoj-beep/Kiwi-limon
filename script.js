@@ -21,7 +21,7 @@ const defaultProducts = [
         "desc": "Panquecas Premium, Fresa, kiwi cambur y Nutella",
         "price": 12,
         "isWeight": false,
-        "image": "Image/panquecaspremium.jpg",
+        "image": "image/panquecaspremium.jpg",
         "addons": [
             {
                 "name": "Kiwi",
@@ -54,7 +54,7 @@ const defaultProducts = [
         "desc": "Refrescante batido granizado de Yogurt, Leche, Fresa, Cambur y mora",
         "price": 6,
         "isWeight": false,
-        "image": "image/Smoothiesfr.jpg",
+        "image": "image/smoothiesfr.jpg",
         "addons": [
             {
                 "name": "Leche",
@@ -181,7 +181,7 @@ const defaultProducts = [
         "desc": "Delicioso Parfait con base de frutos rojos, crema orgánica de coco, yogurt, granola, piña, fresas, melocotón",
         "price": 12,
         "isWeight": false,
-        "image": "Image/parfait14oz.jpg",
+        "image": "image/parfait14oz.jpg",
         "addons": [],
         "removals": [
             "Sin azucar"
@@ -291,7 +291,7 @@ const defaultProducts = [
         "desc": "Mix de frutas",
         "price": 7,
         "isWeight": false,
-        "image": "image/tizanas14oz.jpg",
+        "image": "image/tizana14oz.jpg",
         "addons": [],
         "removals": [
             "Sin azucar"
@@ -359,7 +359,7 @@ const defaultProducts = [
         "desc": "Especial de merengada de coco",
         "price": 7,
         "isWeight": false,
-        "image": "image/coquitas.jpg",
+        "image": "image/coquito.jpg",
         "addons": [],
         "removals": [
             "Sin azucar"
