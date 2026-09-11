@@ -126,7 +126,7 @@ function renderMenu() {
   })).filter((group) => group.items.length);
 
   if (!groups.length) {
-    $('menu-container').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon">⌕</div><h3>No encontramos eso</h3><p>Prueba con otro nombre o vuelve a ver todo el menú.</p></div>';
+    $('menu-container').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>No encontramos eso</h3><p>Prueba con otro nombre o vuelve a ver todo el menú.</p></div>';
     return;
   }
 
@@ -240,7 +240,7 @@ function updateCart() {
   $('checkout-panel').classList.toggle('hidden', !cart.length);
 
   if (!cart.length) {
-    $('cart-items').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon">▣</div><h3>Aquí empieza lo bueno</h3><p>Agrega un bowl, un jugo o ese antojo que te está llamando.</p></div>';
+    $('cart-items').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>Aquí empieza lo bueno</h3><p>Agrega un bowl, un jugo o ese antojo que te está llamando.</p></div>';
     return;
   }
   $('cart-items').innerHTML = cart.map((item) => {
@@ -359,6 +359,7 @@ function saveProducts() {
 function populateProductCategories() {
   $('product-category').innerHTML = categories.slice(1).map((category) => `<option>${escapeHtml(category)}</option>`).join('');
 }
+
 function openProductForm(productId = 0) {
   const product = products.find((item) => item.id === productId);
   $('product-title').textContent = product ? 'Editar producto' : 'Nuevo producto';
@@ -368,6 +369,8 @@ function openProductForm(productId = 0) {
   $('product-price').value = product?.price ?? '';
   $('product-description').value = product?.desc || '';
   $('product-weight').checked = Boolean(product?.isWeight);
+  $('product-sizes').value = (product?.sizes || []).map((s) => `${s.name}: ${s.price}`).join(', ');
+  
   openLayer('product-modal');
 }
 
@@ -408,6 +411,19 @@ function bindEvents() {
   $('product-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const id = Number($('product-id').value);
+    
+    const sizesRaw = $('product-sizes').value.trim();
+    let parsedSizes = [];
+    if (sizesRaw) {
+      parsedSizes = sizesRaw.split(',').map((part) => {
+        const [name, priceStr] = part.split(':').map((str) => str.trim());
+        if (name) {
+          return { name, price: Number(priceStr) || 0 };
+        }
+        return null;
+      }).filter(Boolean);
+    }
+
     const next = {
       id: id || Date.now(),
       name: $('product-name').value.trim(),
@@ -417,7 +433,7 @@ function bindEvents() {
       isWeight: $('product-weight').checked,
       addons: id ? products.find((item) => item.id === id)?.addons || [] : [],
       removals: id ? products.find((item) => item.id === id)?.removals || [] : [],
-      sizes: id ? products.find((item) => item.id === id)?.sizes || [] : []
+      sizes: parsedSizes
     };
     if (!next.name || !Number.isFinite(next.price) || next.price < 0) {
       showToast('Agrega un nombre y precio válidos.');
