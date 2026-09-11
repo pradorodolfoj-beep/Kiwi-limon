@@ -393,15 +393,23 @@ function bindEvents() {
   });
   $('close-login').addEventListener('click', () => closeLayer('login-modal'));
   $('cancel-login').addEventListener('click', () => closeLayer('login-modal'));
+  
+  // LOGIN FORM - Conexión directa con AuthModule
   $('login-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    if ($('login-user').value.trim().toLowerCase() === 'admin' && $('login-password').value === '3008') {
+    const userInput = $('login-user').value;
+    const passInput = $('login-password').value;
+
+    if (window.AuthModule && window.AuthModule.login(userInput, passInput)) {
       localStorage.setItem('kiwi_admin_session', 'active');
       $('login-error').classList.add('hidden');
       closeLayer('login-modal');
       showAdmin();
-    } else $('login-error').classList.remove('hidden');
+    } else {
+      $('login-error').classList.remove('hidden');
+    }
   });
+
   ['back-to-menu', 'return-menu', 'admin-brand-home'].forEach((id) => $(id).addEventListener('click', showMenu));
   $('logout-button').addEventListener('click', () => { localStorage.removeItem('kiwi_admin_session'); showMenu(); });
   $('new-product').addEventListener('click', () => openProductForm());
