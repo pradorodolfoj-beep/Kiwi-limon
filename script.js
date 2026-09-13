@@ -15,29 +15,373 @@ const categoryColors = {
 };
 
 const defaultProducts = [
-  { id: 1718100000001, name: 'Panquecas Premium', category: 'Panquecas', desc: 'Panquecas, fresa, kiwi, cambur y Nutella.', price: 12, image: 'image/panquecaspremium.jpg', addons: [{ name: 'Kiwi', price: 1 }, { name: 'Fresa', price: .5 }, { name: 'Cambur', price: .5 }, { name: 'Nutella 2oz', price: 4 }], removals: ['Sin Kiwi', 'Sin Fresa', 'Sin Cambur', 'Sin Nutella'] },
-  { id: 1718100000002, name: 'Smoothie Frutos Rojos', category: 'Smoothies', desc: 'Batido granizado de yogurt, leche, fresa, cambur y mora.', price: 6, image: 'image/Smoothiesfr.jpg', addons: [{ name: 'Leche', price: 1 }], removals: ['Sin Leche', 'Sin Yogurt'] },
-  { id: 1784681886190, name: 'Sandwich Doble', category: 'Sandwiches', desc: 'Jamón, queso, rúcula, tomate y aguacate.', price: 7, image: 'image/sandwichdoble.jpg', addons: [{ name: 'Huevo', price: .5 }, { name: 'Jamón', price: 1 }, { name: 'Queso', price: 1 }], removals: ['Sin Jamón', 'Sin Queso', 'Sin Tomate', 'Sin Rúcula', 'Sin Aguacate'] },
-  { id: 1784681999335, name: 'Snack de yogurt', category: 'Snack y saludable', desc: 'Yogurt cremoso con granola y frutas de estación.', price: 5, image: 'image/snackyogurt.jpg', addons: [{ name: 'Kiwi', price: 1 }, { name: 'Piña', price: .3 }, { name: 'Melocotón', price: 0 }], removals: ['Sin Fresa', 'Sin Azúcar', 'Sin Kiwi', 'Sin Melocotón'] },
-  { id: 1784682208167, name: 'Acai Amazonas', category: 'Acai bowl', desc: 'Acai, kiwi, melocotón, chia, cambur, maní, fresa y granola.', price: 14, image: 'image/acaiamazonas.jpg', addons: [{ name: 'Fresa', price: 1 }, { name: 'Kiwi', price: 1 }], removals: ['Sin Azúcar', 'Sin Mantequilla de Maní', 'Sin Cambur', 'Sin Chia', 'Sin Melocotón', 'Sin Fresa', 'Sin Kiwi'] },
-  { id: 1784682341789, name: 'Michell parfait 10oz', category: 'Michell parfait', desc: 'Frutos rojos, crema de coco, yogurt, granola, piña y fresa.', price: 10, image: 'image/parfait10oz.jpg', sizes: [{ name: '10oz', price: 0 }, { name: '14oz', price: 2 }], removals: ['Sin Azúcar'] },
-  { id: 1784682378819, name: 'Michel Parfait 14oz', category: 'Michell parfait', desc: 'Parfait de frutos rojos, crema de coco, yogurt y granola.', price: 12, image: 'image/parfait14oz.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784682494518, name: 'Bowl de yogurt con parchita', category: 'Bowl', desc: 'Yogurt y reducción de parchita con frutas de temporada.', price: 12, image: 'image/bowlyogurtredparchita.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784682569515, name: 'Bowl de yogurt con piña', category: 'Bowl', desc: 'Yogurt y reducción de piña con fresa, cambur y kiwi.', price: 12, image: 'image/bowlyogurtredpiña.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784682815955, name: 'Ensalada de frutas pequeña', category: 'Ensaladas', desc: 'Piña, patilla, papaya, melón, fresa, kiwi, cambur y manzana.', price: 10, image: 'image/ensaladapeq.jpg', removals: ['Sin Piña', 'Sin Patilla', 'Sin Papaya', 'Sin Melón', 'Sin Fresa', 'Sin Kiwi', 'Sin Cambur', 'Sin Manzana'] },
-  { id: 1784682895814, name: 'Fresas con crema 10oz', category: 'Fresas con crema', desc: 'Fresas frescas con crema suave, hecha en casa.', price: 10, image: 'image/fresascrema10oz.jpg', sizes: [{ name: '10oz', price: 0 }, { name: '14oz', price: 2 }], addons: [{ name: 'Nutella 2oz', price: 4 }], removals: ['Sin Fresas', 'Sin Crema'] },
-  { id: 1784682984166, name: 'Fresas con crema 14oz', category: 'Fresas con crema', desc: 'Fresas frescas con crema suave, hecha en casa.', price: 12, image: 'image/fresascrema14oz.jpg', addons: [{ name: 'Nutella 2oz', price: 4 }], removals: ['Sin Fresas', 'Sin Crema'] },
-  { id: 1784683086276, name: 'Tizanas 10oz', category: 'Tizanas', desc: 'Mix de frutas cortadas y mucho color.', price: 6.5, image: 'image/tizana10oz.jpg', sizes: [{ name: '10oz', price: 0 }, { name: '14oz', price: .5 }], removals: ['Sin Azúcar'] },
-  { id: 1784683161110, name: 'Tizanas 14oz', category: 'Tizanas', desc: 'Mix de frutas de estación para llevar.', price: 7, image: 'image/tizanas14oz.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784683246919, name: 'Jugo de fresas', category: 'Jugos Básicos', desc: 'Fresas licuadas al momento, dulces y frías.', price: 3, image: 'image/jugofresa.jpg', addons: [{ name: 'Leche', price: 1 }, { name: 'Yogurt', price: 1 }, { name: 'Vainilla', price: .5 }], removals: ['Sin Azúcar'] },
-  { id: 1784683317507, name: 'Duplicado Fresa Cambur', category: 'Jugos duplicados', desc: 'La dupla favorita: fresa y cambur en un vaso.', price: 4, image: 'image/duplicadofresacambur.jpg' },
-  { id: 1784683587530, name: 'Limonada tradicional', category: 'Limonadas', desc: 'Limón recién exprimido, agua fría y el toque justo.', price: 3, image: 'image/limonadast.jpg', addons: [{ name: 'Miel', price: .5 }], removals: ['Sin Azúcar'] },
-  { id: 1784683720936, name: 'Coquitos', category: 'Especiales', desc: 'Merengada de coco, espesa, fría y tropical.', price: 7, image: 'image/coquitas.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784683795084, name: 'Café americano', category: 'Cafés', desc: 'Café tostado, servido caliente y sin vueltas.', price: 1.5, image: 'image/cafeamericano.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784683902851, name: 'Infusión Mía Fría', category: 'Infusiones', desc: 'Jamaica, limón y frutos rojos en frío.', price: 5, image: 'image/infusionmia.jpg', addons: [{ name: 'Miel', price: .5 }], removals: ['Sin Azúcar'] },
-  { id: 1784684084010, name: 'Detox Don Verde', category: 'Detox', desc: 'Pepino y celery para un sorbo que despierta.', price: 3.5, image: 'image/don verde.jpg', removals: ['Sin Azúcar'] },
-  { id: 1784688801846, name: 'Fresa', category: 'Frutas', desc: 'Fresa fresca por peso.', price: 12, image: 'image/fresa.jpg', isWeight: true },
-  { id: 1784688830393, name: 'Kiwi', category: 'Frutas', desc: 'Kiwi importado, fresco y listo para picar.', price: 9, image: 'image/kiwi.jpg', isWeight: true }
+  {
+    "id": 1718100000001,
+    "name": "Panquecas Premium",
+    "category": "Panquecas",
+    "desc": "Panquecas, fresa, kiwi, cambur y Nutella.",
+    "price": 12,
+    "image": "image/panquecaspremium.jpg",
+    "addons": [
+      {
+        "name": "Kiwi",
+        "price": 1
+      },
+      {
+        "name": "Fresa",
+        "price": 0.5
+      },
+      {
+        "name": "Cambur",
+        "price": 0.5
+      },
+      {
+        "name": "Nutella 2oz",
+        "price": 4
+      }
+    ],
+    "removals": [
+      "Sin Kiwi",
+      "Sin Fresa",
+      "Sin Cambur",
+      "Sin Nutella"
+    ]
+  },
+  {
+    "id": 1718100000002,
+    "name": "Smoothie Frutos Rojos",
+    "category": "Smoothies",
+    "desc": "Batido granizado de yogurt, leche, fresa, cambur y mora.",
+    "price": 6,
+    "image": "image/Smoothiesfr.jpg",
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      }
+    ],
+    "removals": [
+      "Sin Leche",
+      "Sin Yogurt"
+    ]
+  },
+  {
+    "id": 1784681886190,
+    "name": "Sandwich Doble",
+    "category": "Sandwiches",
+    "desc": "Jamón, queso, rúcula, tomate y aguacate.",
+    "price": 7,
+    "image": "image/sandwichdoble.jpg",
+    "addons": [
+      {
+        "name": "Huevo",
+        "price": 0.5
+      },
+      {
+        "name": "Jamón",
+        "price": 1
+      },
+      {
+        "name": "Queso",
+        "price": 1
+      }
+    ],
+    "removals": [
+      "Sin Jamón",
+      "Sin Queso",
+      "Sin Tomate",
+      "Sin Rúcula",
+      "Sin Aguacate"
+    ]
+  },
+  {
+    "id": 1784681999335,
+    "name": "Snack de yogurt",
+    "category": "Snack y saludable",
+    "desc": "Yogurt cremoso con granola y frutas de estación.",
+    "price": 5,
+    "image": "image/snackyogurt.jpg",
+    "addons": [
+      {
+        "name": "Kiwi",
+        "price": 1
+      },
+      {
+        "name": "Piña",
+        "price": 0.3
+      },
+      {
+        "name": "Melocotón",
+        "price": 0
+      }
+    ],
+    "removals": [
+      "Sin Fresa",
+      "Sin Azúcar",
+      "Sin Kiwi",
+      "Sin Melocotón"
+    ]
+  },
+  {
+    "id": 1784682208167,
+    "name": "Acai Amazonas",
+    "category": "Acai bowl",
+    "desc": "Acai, kiwi, melocotón, chia, cambur, maní, fresa y granola.",
+    "price": 14,
+    "image": "image/acaiamazonas.jpg",
+    "addons": [
+      {
+        "name": "Fresa",
+        "price": 1
+      },
+      {
+        "name": "Kiwi",
+        "price": 1
+      }
+    ],
+    "removals": [
+      "Sin Azúcar",
+      "Sin Mantequilla de Maní",
+      "Sin Cambur",
+      "Sin Chia",
+      "Sin Melocotón",
+      "Sin Fresa",
+      "Sin Kiwi"
+    ]
+  },
+  {
+    "id": 1784682341789,
+    "name": "Michell parfait",
+    "category": "Michell parfait",
+    "desc": "Frutos rojos, crema de coco, yogurt, granola, piña y fresa.",
+    "price": 10,
+    "image": "image/parfait10oz.jpg",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin Azúcar"
+    ],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1784682494518,
+    "name": "Bowl de yogurt con parchita",
+    "category": "Bowl",
+    "desc": "Yogurt y reducción de parchita con frutas de temporada.",
+    "price": 12,
+    "image": "image/bowlyogurtredparchita.jpg",
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784682569515,
+    "name": "Bowl de yogurt con piña",
+    "category": "Bowl",
+    "desc": "Yogurt y reducción de piña con fresa, cambur y kiwi.",
+    "price": 12,
+    "image": "image/bowlyogurtredpiña.jpg",
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784682815955,
+    "name": "Ensalada de frutas pequeña",
+    "category": "Ensaladas",
+    "desc": "Piña, patilla, papaya, melón, fresa, kiwi, cambur y manzana.",
+    "price": 10,
+    "image": "image/ensaladapeq.jpg",
+    "removals": [
+      "Sin Piña",
+      "Sin Patilla",
+      "Sin Papaya",
+      "Sin Melón",
+      "Sin Fresa",
+      "Sin Kiwi",
+      "Sin Cambur",
+      "Sin Manzana"
+    ]
+  },
+  {
+    "id": 1784682895814,
+    "name": "Fresas con crema",
+    "category": "Fresas con crema",
+    "desc": "Fresas frescas con crema suave, hecha en casa.",
+    "price": 10,
+    "image": "image/fresascrema10oz.jpg",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Nutella 2oz",
+        "price": 4
+      }
+    ],
+    "removals": [
+      "Sin Fresas",
+      "Sin Crema"
+    ],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1784683086276,
+    "name": "Tizanas",
+    "category": "Tizanas",
+    "desc": "Mix de frutas cortadas y mucho color.",
+    "price": 6.5,
+    "image": "image/tizana10oz.jpg",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin Azúcar"
+    ],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 0.5
+      }
+    ]
+  },
+  {
+    "id": 1784683246919,
+    "name": "Jugo de fresas",
+    "category": "Jugos Básicos",
+    "desc": "Fresas licuadas al momento, dulces y frías.",
+    "price": 3,
+    "image": "image/jugofresa.jpg",
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.5
+      }
+    ],
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784683317507,
+    "name": "Duplicado Fresa Cambur",
+    "category": "Jugos duplicados",
+    "desc": "La dupla favorita: fresa y cambur en un vaso.",
+    "price": 4,
+    "image": "image/duplicadofresacambur.jpg"
+  },
+  {
+    "id": 1784683587530,
+    "name": "Limonada tradicional",
+    "category": "Limonadas",
+    "desc": "Limón recién exprimido, agua fría y el toque justo.",
+    "price": 3,
+    "image": "image/limonadast.jpg",
+    "addons": [
+      {
+        "name": "Miel",
+        "price": 0.5
+      }
+    ],
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784683720936,
+    "name": "Coquitos",
+    "category": "Especiales",
+    "desc": "Merengada de coco, espesa, fría y tropical.",
+    "price": 7,
+    "image": "image/coquitas.jpg",
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784683795084,
+    "name": "Café americano",
+    "category": "Cafés",
+    "desc": "Café tostado, servido caliente y sin vueltas.",
+    "price": 1.5,
+    "image": "image/cafeamericano.jpg",
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784683902851,
+    "name": "Infusión Mía Fría",
+    "category": "Infusiones",
+    "desc": "Jamaica, limón y frutos rojos en frío.",
+    "price": 5,
+    "image": "image/infusionmia.jpg",
+    "addons": [
+      {
+        "name": "Miel",
+        "price": 0.5
+      }
+    ],
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784684084010,
+    "name": "Detox Don Verde",
+    "category": "Detox",
+    "desc": "Pepino y celery para un sorbo que despierta.",
+    "price": 3.5,
+    "image": "image/don verde.jpg",
+    "removals": [
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 1784688801846,
+    "name": "Fresa",
+    "category": "Frutas",
+    "desc": "Fresa fresca por peso.",
+    "price": 12,
+    "image": "image/fresa.jpg",
+    "isWeight": true
+  },
+  {
+    "id": 1784688830393,
+    "name": "Kiwi",
+    "category": "Frutas",
+    "desc": "Kiwi importado, fresco y listo para picar.",
+    "price": 9,
+    "image": "image/kiwi.jpg",
+    "isWeight": true
+  }
 ];
 
 const $ = (id) => document.getElementById(id);
