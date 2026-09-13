@@ -52,7 +52,6 @@ const productTotal = (item) => {
   return Number(item.price || 0) * weightTotal + sizeTotal + addonTotal;
 };
 
-// Carga inicial directa de memoria sin dependencias de caché ni localStorage
 let products = structuredClone(defaultProducts);
 let cart = [];
 let activeCategory = 'Todos';
@@ -144,7 +143,8 @@ function openCustomization(productId) {
     size: product.sizes?.[0] || null,
     addons: [],
     removals: [],
-    weight: '1.000'
+    weight: '1.000',
+    comment: ''
   };
   renderCustomization();
   openLayer('customization-modal');
@@ -170,6 +170,15 @@ function renderCustomization() {
       <label class="option-label-card"><span><input type="checkbox" data-draft-addon="${escapeHtml(addon.name)}" ${draft.addons.some((item) => item.name === addon.name) ? 'checked' : ''}>${escapeHtml(addon.name)}</span><span class="option-price">${addon.price ? `+${money(addon.price)}` : 'incluido'}</span></label>
     `).join('')}</div></div>`);
   }
+  
+  // Campo de Comentario / Nota especial para la preparación
+  sections.push(`
+    <div class="option-group">
+      <label class="option-label" for="draft-comment">Notas especiales o detalles para la barra</label>
+      <textarea class="textarea-field" id="draft-comment" placeholder="Ej: Poca azúcar, servido bien frío, cambiar una fruta..." style="min-height: 60px;">${escapeHtml(draft.comment || '')}</textarea>
+    </div>
+  `);
+
   if (product.removals?.length) {
     sections.push(`<div class="option-group"><span class="option-label">Sin esto, por favor</span><div class="option-list">${product.removals.map((removal) => `
       <label class="option-label-card"><span><input type="checkbox" data-draft-removal="${escapeHtml(removal)}" ${draft.removals.includes(removal) ? 'checked' : ''}>${escapeHtml(removal)}</span></label>
@@ -198,6 +207,9 @@ function renderCustomization() {
     weightInput?.focus();
     weightInput?.setSelectionRange(weightInput.value.length, weightInput.value.length);
   });
+  $('draft-comment')?.addEventListener('input', (event) => {
+    draft.comment = event.target.value;
+  });
 }
 
 function confirmCustomization() {
@@ -216,7 +228,8 @@ function confirmCustomization() {
     selectedSize: currentDraft.size,
     selectedAddons: currentDraft.addons,
     selectedRemovals: currentDraft.removals,
-    chosenWeight: Number(currentDraft.weight) || 1
+    chosenWeight: Number(currentDraft.weight) || 1,
+    comment: (currentDraft.comment || '').trim()
   });
   closeLayer('customization-modal');
   updateCart();
@@ -242,7 +255,8 @@ function updateCart() {
       item.selectedSize?.name,
       item.selectedAddons?.length ? `Extra: ${item.selectedAddons.map((addon) => addon.name).join(', ')}` : '',
       item.selectedRemovals?.length ? item.selectedRemovals.join(', ') : '',
-      item.isWeight ? `${Number(item.chosenWeight).toFixed(3)} kg` : ''
+      item.isWeight ? `${Number(item.chosenWeight).toFixed(3)} kg` : '',
+      item.comment ? `Nota: "${item.comment}"` : ''
     ].filter(Boolean).join(' · ') || 'Preparado tal como viene';
     return `<div class="cart-line">
       <div class="line-top"><span class="line-name">${escapeHtml(item.name)}</span><span class="line-price">${money(productTotal(item))}</span></div>
@@ -275,8 +289,10 @@ function sendOrder() {
   const cedula = $('customer-cedula').value.trim();
   const phone = $('customer-phone').value.trim();
   const address = $('customer-address').value.trim();
-  if (!name || !cedula || !phone || (delivery === 'delivery' && !address)) {
-    showToast('Completa tus datos de entrega para enviar el pedido.');
+  const payment = $('payment-method').value;
+
+  if (!name || !cedula || !phone || !payment || (delivery === 'delivery' && !address)) {
+    showToast('Completa todos tus datos y el método de pago.');
     return;
   }
   if (!/^\d{11}$/.test(phone)) {
@@ -288,12 +304,13 @@ function sendOrder() {
       item.selectedSize?.name,
       item.selectedAddons?.length ? `extras: ${item.selectedAddons.map((addon) => addon.name).join(', ')}` : '',
       item.selectedRemovals?.length ? item.selectedRemovals.join(', ') : '',
-      item.isWeight ? `${Number(item.chosenWeight).toFixed(3)} kg` : ''
+      item.isWeight ? `${Number(item.chosenWeight).toFixed(3)} kg` : '',
+      item.comment ? `nota: ${item.comment}` : ''
     ].filter(Boolean).join(' · ');
     return `${index + 1}. ${item.name}${details ? ` (${details})` : ''} — ${money(productTotal(item))}`;
   }).join('\n');
   const total = cart.reduce((sum, item) => sum + productTotal(item), 0);
-  const message = `Hola Kiwi Limón, quiero hacer este pedido:\n\n${lines}\n\nTotal: ${money(total)}\nEntrega: ${delivery === 'pickup' ? 'Pick up' : 'Delivery'}\nPago: ${$('payment-method').value}\nNombre: ${name}\nCédula: ${cedula}\nTeléfono: ${phone}${delivery === 'delivery' ? `\nDirección: ${address}` : ''}`;
+  const message = `Hola Kiwi Limón, quiero hacer este pedido:\n\n${lines}\n\nTotal: ${money(total)}\nEntrega: ${delivery === 'pickup' ? 'Pick up' : 'Delivery'}\nPago: ${payment}\nNombre: ${name}\nCédula: ${cedula}\nTeléfono: ${phone}${delivery === 'delivery' ? `\nDirección: ${address}` : ''}`;
   window.open(`https://wa.me/584128731016?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   showToast('Pedido listo para enviar por WhatsApp.');
 }
@@ -364,6 +381,8 @@ function openProductForm(productId = 0) {
   $('product-description').value = product?.desc || '';
   $('product-weight').checked = Boolean(product?.isWeight);
   $('product-sizes').value = (product?.sizes || []).map((s) => `${s.name}: ${s.price}`).join(', ');
+  $('product-addons').value = (product?.addons || []).map((a) => `${a.name}: ${a.price}`).join(', ');
+  $('product-removals').value = (product?.removals || []).join(', ');
   
   openLayer('product-modal');
 }
@@ -437,6 +456,7 @@ function bindEvents() {
     event.preventDefault();
     const id = Number($('product-id').value);
     
+    // Parseo de Tamaños
     const sizesRaw = $('product-sizes').value.trim();
     let parsedSizes = [];
     if (sizesRaw) {
@@ -449,6 +469,26 @@ function bindEvents() {
       }).filter(Boolean);
     }
 
+    // Parseo de Adicionales
+    const addonsRaw = $('product-addons').value.trim();
+    let parsedAddons = [];
+    if (addonsRaw) {
+      parsedAddons = addonsRaw.split(',').map((part) => {
+        const [name, priceStr] = part.split(':').map((str) => str.trim());
+        if (name) {
+          return { name, price: Number(priceStr) || 0 };
+        }
+        return null;
+      }).filter(Boolean);
+    }
+
+    // Parseo de Remociones
+    const removalsRaw = $('product-removals').value.trim();
+    let parsedRemovals = [];
+    if (removalsRaw) {
+      parsedRemovals = removalsRaw.split(',').map((str) => str.trim()).filter(Boolean);
+    }
+
     const next = {
       id: id || Date.now(),
       name: $('product-name').value.trim(),
@@ -457,14 +497,16 @@ function bindEvents() {
       price: Number($('product-price').value),
       image: $('product-image').value.trim(),
       isWeight: $('product-weight').checked,
-      addons: id ? products.find((item) => item.id === id)?.addons || [] : [],
-      removals: id ? products.find((item) => item.id === id)?.removals || [] : [],
+      addons: parsedAddons,
+      removals: parsedRemovals,
       sizes: parsedSizes
     };
+
     if (!next.name || !Number.isFinite(next.price) || next.price < 0) {
       showToast('Agrega un nombre y precio válidos.');
       return;
     }
+
     products = id ? products.map((item) => item.id === id ? next : item) : [...products, next];
     closeLayer('product-modal');
     renderAdminTable();
