@@ -58,6 +58,7 @@ let activeCategory = 'Todos';
 let searchText = '';
 let currentDraft = null;
 let delivery = 'pickup';
+let paymentMethod = 'Pago Móvil'; // Método por defecto
 let toastTimer;
 
 function showToast(message) {
@@ -171,7 +172,6 @@ function renderCustomization() {
     `).join('')}</div></div>`);
   }
   
-  // Campo de Comentario / Nota especial para la preparación
   sections.push(`
     <div class="option-group">
       <label class="option-label" for="draft-comment">Notas especiales o detalles para la barra</label>
@@ -289,9 +289,8 @@ function sendOrder() {
   const cedula = $('customer-cedula').value.trim();
   const phone = $('customer-phone').value.trim();
   const address = $('customer-address').value.trim();
-  const payment = $('payment-method').value;
 
-  if (!name || !cedula || !phone || !payment || (delivery === 'delivery' && !address)) {
+  if (!name || !cedula || !phone || !paymentMethod || (delivery === 'delivery' && !address)) {
     showToast('Completa todos tus datos y el método de pago.');
     return;
   }
@@ -310,7 +309,7 @@ function sendOrder() {
     return `${index + 1}. ${item.name}${details ? ` (${details})` : ''} — ${money(productTotal(item))}`;
   }).join('\n');
   const total = cart.reduce((sum, item) => sum + productTotal(item), 0);
-  const message = `Hola Kiwi Limón, quiero hacer este pedido:\n\n${lines}\n\nTotal: ${money(total)}\nEntrega: ${delivery === 'pickup' ? 'Pick up' : 'Delivery'}\nPago: ${payment}\nNombre: ${name}\nCédula: ${cedula}\nTeléfono: ${phone}${delivery === 'delivery' ? `\nDirección: ${address}` : ''}`;
+  const message = `Hola Kiwi Limón, quiero hacer este pedido:\n\n${lines}\n\nTotal: ${money(total)}\nEntrega: ${delivery === 'pickup' ? 'Pick up' : 'Delivery'}\nPago: ${paymentMethod}\nNombre: ${name}\nCédula: ${cedula}\nTeléfono: ${phone}${delivery === 'delivery' ? `\nDirección: ${address}` : ''}`;
   window.open(`https://wa.me/584128731016?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   showToast('Pedido listo para enviar por WhatsApp.');
 }
@@ -405,6 +404,17 @@ function bindEvents() {
   $('confirm-customization').addEventListener('click', confirmCustomization);
   $('pickup-option').addEventListener('click', () => selectDelivery('pickup'));
   $('delivery-option').addEventListener('click', () => selectDelivery('delivery'));
+  
+  // EVENTOS PARA MÉTODO DE PAGO ESTÉTICO
+  const paymentButtons = document.querySelectorAll('#payment-options .payment-card');
+  paymentButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      paymentButtons.forEach((b) => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      paymentMethod = btn.dataset.payment;
+    });
+  });
+
   $('send-order').addEventListener('click', sendOrder);
   $('admin-button').addEventListener('click', () => {
     if (isAdminSessionActive) showAdmin();
@@ -456,7 +466,6 @@ function bindEvents() {
     event.preventDefault();
     const id = Number($('product-id').value);
     
-    // Parseo de Tamaños
     const sizesRaw = $('product-sizes').value.trim();
     let parsedSizes = [];
     if (sizesRaw) {
@@ -469,7 +478,6 @@ function bindEvents() {
       }).filter(Boolean);
     }
 
-    // Parseo de Adicionales
     const addonsRaw = $('product-addons').value.trim();
     let parsedAddons = [];
     if (addonsRaw) {
@@ -482,7 +490,6 @@ function bindEvents() {
       }).filter(Boolean);
     }
 
-    // Parseo de Remociones
     const removalsRaw = $('product-removals').value.trim();
     let parsedRemovals = [];
     if (removalsRaw) {
