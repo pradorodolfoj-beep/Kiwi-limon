@@ -12,13 +12,12 @@
     pass: '3008'
   };
 
-  // Función de verificación de credenciales
+  // Función de verificación de credenciales con limpieza de espacios
   function login(username, password) {
     if (!username || !password) return false;
-    return (
-      username.trim().toUpperCase() === AUTH_CONFIG.user.toUpperCase() &&
-      password.trim() === AUTH_CONFIG.pass
-    );
+    const cleanUser = String(username).trim().toUpperCase();
+    const cleanPass = String(password).trim();
+    return cleanUser === AUTH_CONFIG.user.toUpperCase() && cleanPass === AUTH_CONFIG.pass;
   }
 
   // Configuración de scroll automático para la barra de categorías
