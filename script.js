@@ -58,7 +58,7 @@ let activeCategory = 'Todos';
 let searchText = '';
 let currentDraft = null;
 let delivery = 'pickup';
-let paymentMethod = 'Pago Móvil'; // Método por defecto
+let paymentMethod = 'Pago Móvil';
 let toastTimer;
 
 function showToast(message) {
@@ -405,7 +405,6 @@ function bindEvents() {
   $('pickup-option').addEventListener('click', () => selectDelivery('pickup'));
   $('delivery-option').addEventListener('click', () => selectDelivery('delivery'));
   
-  // EVENTOS PARA MÉTODO DE PAGO ESTÉTICO
   const paymentButtons = document.querySelectorAll('#payment-options .payment-card');
   paymentButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
