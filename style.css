@@ -297,7 +297,7 @@ a { color: inherit; }
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
 
-/* CORRECCIÓN DE IMÁGENES: Ajuste para que ocupen todo el recuadro sin deformar */
+/* IMÁGENES: Ajustadas con 'contain' para mostrarse completas dentro del recuadro sin deformar */
 .product-art {
   position: relative;
   display: flex;
@@ -307,6 +307,7 @@ a { color: inherit; }
   height: 180px;
   overflow: hidden;
   background-color: #f4efdd;
+  padding: 6px;
 }
 .product-art img {
   position: absolute;
@@ -315,7 +316,7 @@ a { color: inherit; }
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   transition: transform .35s ease;
