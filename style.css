@@ -71,7 +71,6 @@ a { color: inherit; }
   color: inherit;
   text-align: left;
 }
-/* CORRECCIÓN: Ajuste estricto del logo dentro de su recuadro */
 .brand-mark {
   position: relative;
   display: flex;
@@ -227,7 +226,6 @@ a { color: inherit; }
 .search-input { height: 44px; padding: 0 14px 0 39px; font-size: 13px; }
 .field, .select-field, .textarea-field { padding: 11px 13px; font-size: 13px; }
 
-/* NUEVOS ESTILOS: Método de Pago Estético */
 .payment-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -298,17 +296,32 @@ a { color: inherit; }
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
-.product-art { position: relative; display: grid; place-items: center; height: 168px; overflow: hidden; }
+
+/* CORRECCIÓN DE IMÁGENES: Ajuste para que ocupen todo el recuadro sin deformar */
+.product-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #f4efdd;
+}
 .product-art img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform .35s ease;
 }
-.product-card:hover .product-art img { transform: scale(1.03); }
+.product-card:hover .product-art img { transform: scale(1.05); }
+
 .art-fallback { color: #677737; font: 700 34px 'Fraunces', serif; letter-spacing: -.06em; }
 .art-fallback::after {
   content: '';
@@ -387,7 +400,6 @@ a { color: inherit; }
 .step-title { margin: 0 0 10px; color: #4e5d23; font-size: 12px; font-weight: 700; }
 .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px; }
 
-/* Botones de Selección Pick Up / Delivery */
 .choice {
   display: flex;
   align-items: center;
@@ -420,7 +432,6 @@ a { color: inherit; }
 .checkout-total { display: flex; align-items: center; justify-content: space-between; margin: 9px 0 12px; color: #56642c; font-size: 13px; font-weight: 700; }
 .checkout-total strong { color: #dd5a37; font-size: 22px; }
 
-/* Botón de Enviar por WhatsApp con estilo oficial */
 .whatsapp-button {
   display: inline-flex;
   align-items: center;
