@@ -53,7 +53,7 @@ const defaultProducts = [
     "category": "Smoothies",
     "desc": "Batido granizado de yogurt, leche, fresa, cambur y mora.",
     "price": 6,
-    "image": "image/Smoothiesfr.jpg",
+    "image": "image/Sfrutosr.jpg",
     "addons": [
       {
         "name": "Leche",
@@ -218,7 +218,7 @@ const defaultProducts = [
     "category": "Fresas con crema",
     "desc": "Fresas frescas con crema suave, hecha en casa.",
     "price": 10,
-    "image": "image/fresascrema10oz.jpg",
+    "image": "image/fcrema.jpg",
     "isWeight": false,
     "addons": [
       {
@@ -320,7 +320,7 @@ const defaultProducts = [
     "category": "Especiales",
     "desc": "Merengada de coco, espesa, fría y tropical.",
     "price": 7,
-    "image": "image/coquitas.jpg",
+    "image": "image/Coquitos.jpg",
     "removals": [
       "Sin Azúcar"
     ]
@@ -359,7 +359,7 @@ const defaultProducts = [
     "category": "Detox",
     "desc": "Pepino y celery para un sorbo que despierta.",
     "price": 3.5,
-    "image": "image/don verde.jpg",
+    "image": "image/Dverde.jpg",
     "removals": [
       "Sin Azúcar"
     ]
