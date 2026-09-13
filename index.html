@@ -166,14 +166,26 @@
         <input class="field" id="customer-cedula" type="text" placeholder="Cédula de identidad">
         <input class="field" id="customer-phone" type="tel" placeholder="Teléfono de contacto">
         <textarea class="textarea-field hidden" id="customer-address" placeholder="Dirección exacta de entrega"></textarea>
-        <div class="select-wrapper">
-          <select class="select-field" id="payment-method">
-            <option value="" disabled selected hidden>Método de pago</option>
-            <option value="Pago Móvil">💸 Pago Móvil</option>
-            <option value="Zelle">💵 Zelle</option>
-            <option value="Efectivo USD">💵 Efectivo USD</option>
-            <option value="Punto de Venta">💳 Punto de Venta</option>
-          </select>
+        
+        <!-- SELECCIÓN ESTÉTICA DE MÉTODO DE PAGO -->
+        <p class="step-title" style="margin-top: 6px; margin-bottom: 6px;">Método de pago</p>
+        <div class="payment-grid" id="payment-options">
+          <button class="payment-card selected" type="button" data-payment="Pago Móvil">
+            <span class="payment-icon">💸</span>
+            <span>Pago Móvil</span>
+          </button>
+          <button class="payment-card" type="button" data-payment="Zelle">
+            <span class="payment-icon">💵</span>
+            <span>Zelle</span>
+          </button>
+          <button class="payment-card" type="button" data-payment="Efectivo USD">
+            <span class="payment-icon">💵</span>
+            <span>Efectivo USD</span>
+          </button>
+          <button class="payment-card" type="button" data-payment="Punto de Venta">
+            <span class="payment-icon">💳</span>
+            <span>Punto de Venta</span>
+          </button>
         </div>
       </div>
       <div class="checkout-total">
