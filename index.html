@@ -3,212 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menú digital de Kiwi Limón: bowls, jugos y antojos preparados con fruta fresca.">
-  <title>Kiwi Limón — Menú Digital</title>
+  <title>Menú Interactivo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <button class="brand" id="brand-home" type="button" aria-label="Volver al inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>
-        </span>
-        <span class="brand-name">Kiwi <span>Limón</span></span>
-      </button>
-      <div class="top-actions">
-        <button class="icon-button" id="admin-button" type="button" aria-label="Abrir administración">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <button class="cart-button" id="cart-button" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span>Pedido</span>
-          <span class="cart-badge" id="cart-count">0</span>
-        </button>
-      </div>
-    </header>
 
-    <main id="customer-view">
-      <div class="hero-wrap">
-        <section class="hero">
-          <span class="hero-note">hecho al momento</span>
-          <div class="hero-copy">
-            <p class="eyebrow">✦ fruta con acento venezolano</p>
-            <h1>Un poco de <em>sol</em> en cada vaso.</h1>
-            <p class="hero-description">Bowls, jugos y antojos preparados con fruta que se siente viva. Pide para recoger o te lo llevamos.</p>
-            <div class="hero-meta">
-              <span class="hero-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Horario de Lunes a Sabado · 7:00 am — 8:00 pm
-                
-                Horario de Domingo · 9:00 am — 6:00 pm
-              </span>
-              <a class="hero-pill" href="https://maps.app.goo.gl/Fp6HuWBUe4UiBhCRA" target="_blank" rel="noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Ver ubicación
-              </a>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <section class="content-wrap" aria-labelledby="menu-title">
-        <div class="menu-toolbar">
-          <div>
-            <h2 id="menu-title">Elige tu antojo</h2>
-            <p>Todo fresco. Nada aburrido. Explora el menú completo.</p>
-          </div>
-          <label class="search-box">
-            <span aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <input id="search-input" class="search-input" type="search" placeholder="Busca fruta, bowl..." autocomplete="off">
-          </label>
-        </div>
-
-        <nav class="category-rail" id="category-rail" aria-label="Categorías del menú"></nav>
-        <div id="menu-container"></div>
-      </section>
-    </main>
-
-    <footer class="site-footer">Kiwi Limón · fruta fresca, días más bonitos.</footer>
-
-    <div class="cart-dock hidden" id="cart-dock">
-      <div>
-        <div class="dock-label"><span id="dock-count">0</span> productos en tu pedido</div>
-        <strong class="dock-total" id="dock-total">$0.00</strong>
-      </div>
-      <button class="dock-button" id="dock-button" type="button">Ver pedido <span aria-hidden="true">→</span></button>
-    </div>
-  </div>
-
-  <div class="backdrop hidden" id="backdrop"></div>
-
-  <aside class="drawer hidden" id="cart-drawer" aria-label="Tu pedido">
-    <div class="drawer-head">
-      <div>
-        <h2>Tu pedido</h2>
-        <p>Revísalo antes de mandarlo a la barra.</p>
-      </div>
-      <button class="close-button" id="close-cart" type="button" aria-label="Cerrar pedido">×</button>
-    </div>
-    <div class="drawer-body" id="cart-items"></div>
-    <div class="drawer-foot hidden" id="checkout-panel">
-      <p class="step-title">Cómo lo recibes</p>
-      <div class="choice-grid">
-        <button class="choice selected" id="pickup-option" type="button">▣ <span>Pick up</span></button>
-        <button class="choice" id="delivery-option" type="button">▱ <span>Delivery</span></button>
-      </div>
-      <div class="checkout-fields">
-        <input class="field" id="customer-name" type="text" placeholder="Tu nombre">
-        <input class="field" id="customer-cedula" type="text" placeholder="Cédula de identidad">
-        <input class="field" id="customer-phone" type="tel" placeholder="Teléfono de contacto">
-        <textarea class="textarea-field hidden" id="customer-address" placeholder="Dirección exacta de entrega"></textarea>
-        <select class="select-field" id="payment-method">
-          <option>Pago Móvil</option>
-          <option>Zelle</option>
-          <option>Efectivo USD</option>
-          <option>Punto de Venta</option>
-        </select>
-      </div>
-      <div class="checkout-total">
-        <span>Total a pagar</span>
-        <strong id="checkout-total">$0.00</strong>
-      </div>
-      <button class="whatsapp-button" id="send-order" type="button">→ Enviar pedido por WhatsApp</button>
-    </div>
-  </aside>
-
-  <div class="modal-wrap hidden" id="customization-modal">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="custom-title">
-      <div class="modal-head">
-        <div>
-          <h2 id="custom-title">Personaliza tu pedido</h2>
-          <p id="custom-description"></p>
-        </div>
-        <button class="close-button" id="close-customization" type="button" aria-label="Cerrar personalización">×</button>
-      </div>
-      <div class="modal-content" id="customization-content"></div>
-      <div class="modal-actions">
-        <button class="primary-button" id="confirm-customization" type="button">✓ Añadir al pedido</button>
-        <button class="secondary-button" id="cancel-customization" type="button">Cancelar</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal-wrap hidden" id="login-modal">
-    <div class="modal-card small-modal" role="dialog" aria-modal="true" aria-labelledby="login-title">
-      <div class="modal-head">
-        <div>
-          <h2 id="login-title">Zona de barra</h2>
-          <p>Gestiona los productos de Kiwi Limón.</p>
-        </div>
-        <button class="close-button" id="close-login" type="button" aria-label="Cerrar acceso">×</button>
-      </div>
-      <form class="form-stack" id="login-form">
-        <label class="form-label">Usuario<input class="field" id="login-user" type="text" autocomplete="username" required></label>
-        <label class="form-label">Contraseña<input class="field" id="login-password" type="password" autocomplete="current-password" required></label>
-        <p class="error-text hidden" id="login-error">Usuario o contraseña incorrectos.</p>
-        <div class="modal-actions">
-          <button class="primary-button" type="submit">Entrar</button>
-          <button class="secondary-button" id="cancel-login" type="button">Cancelar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <section class="admin-view hidden" id="admin-view">
-    <header class="topbar">
-      <button class="brand" id="admin-brand-home" type="button">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>
-        </span>
-        <span class="brand-name">Kiwi <span>Limón</span></span>
-      </button>
-      <div class="top-actions">
-        <button class="secondary-button compact-button" id="back-to-menu" type="button">Ver menú</button>
-        <button class="icon-button" id="logout-button" type="button" aria-label="Cerrar sesión">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-        </button>
-      </div>
-    </header>
-    <main class="admin-page">
-      <div class="admin-header">
-        <div>
-          <h1>Zona de barra</h1>
-          <p>El menú vive aquí. Ajusta precios y productos sin perder el ritmo.</p>
-        </div>
-        <div class="admin-actions">
-          <button class="primary-button auto-button" id="new-product" type="button">+ Nuevo producto</button>
-          <button class="secondary-button" id="save-menu" type="button">✓ Guardar</button>
-        </div>
-      </div>
-      <div class="admin-grid">
-        <section class="panel">
-          <div class="panel-head"><h2>Atajos de gestión</h2></div>
-          <div class="form-stack">
-            <div class="active-menu"><span class="active-icon">◒</span><div><strong>Menú activo</strong><small><span id="admin-product-count">0</span> productos publicados</small></div></div>
-            <p class="admin-help">Edita los datos principales de cada producto. Las personalizaciones del menú permanecen disponibles para los clientes.</p>
-            <button class="secondary-button" id="return-menu" type="button">→ Volver al menú</button>
-          </div>
-        </section>
-        <section class="panel">
-          <div class="panel-head"><h2>Inventario actual</h2></div>
-          <div class="admin-table-wrap">
-            <table class="admin-table">
-              <thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Acciones</th></tr></thead>
-              <tbody id="admin-table-body"></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-    </main>
-  </section>
-
+  <!-- Modal Formulario de Producto -->
   <div class="modal-wrap hidden" id="product-modal">
     <div class="modal-card small-modal" role="dialog" aria-modal="true" aria-labelledby="product-title">
       <div class="modal-head">
-        <div><h2 id="product-title">Nuevo producto</h2><p>Los cambios se guardan en este dispositivo.</p></div>
+        <div>
+          <h2 id="product-title">Nuevo producto</h2>
+          <p>Agrega o modifica los detalles del producto.</p>
+        </div>
         <button class="close-button" id="close-product" type="button" aria-label="Cerrar formulario">×</button>
       </div>
       <form class="form-stack" id="product-form">
@@ -218,6 +25,7 @@
           <label class="form-label">Categoría<select class="select-field" id="product-category" name="category"></select></label>
           <label class="form-label">Precio<input class="field" id="product-price" name="price" type="number" step=".01" min="0" required></label>
         </div>
+        <label class="form-label">Ruta / URL de la Imagen<input class="field" id="product-image" name="image" placeholder="Ej: image/producto.jpg"></label>
         <label class="form-label">Descripción<textarea class="textarea-field" id="product-description" name="description"></textarea></label>
         <label class="check-row"><input id="product-weight" type="checkbox"> Se vende por kilogramo</label>
         
@@ -228,15 +36,51 @@
         </div>
 
         <div class="modal-actions">
-          <button class="primary-button" type="submit">✓ Guardar</button>
+          <button class="primary-button" type="submit">✓ Guardar y copiar código</button>
           <button class="secondary-button" id="cancel-product" type="button">Cancelar</button>
         </div>
       </form>
     </div>
-  </div> 
+  </div>
 
-  <div class="toast hidden" id="toast" role="status"></div>
-  <script src="auth.js"></script>
+  <!-- Contenedor Principal del Menú / Vista de Administración -->
+  <main class="main-container">
+    <header class="app-header">
+      <h1>Menú Digital</h1>
+      <button class="secondary-button" id="open-admin-button" type="button">Panel Admin</button>
+    </header>
+
+    <section id="menu-section" class="menu-grid">
+      <!-- Los productos se cargan dinámicamente -->
+    </section>
+
+    <!-- Vista Tabla de Administración -->
+    <section id="admin-section" class="admin-panel hidden">
+      <div class="admin-header">
+        <h2>Administración de Productos</h2>
+        <button class="primary-button" id="add-product-button" type="button">+ Agregar Producto</button>
+      </div>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
