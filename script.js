@@ -394,7 +394,7 @@ function bindEvents() {
   $('close-login').addEventListener('click', () => closeLayer('login-modal'));
   $('cancel-login').addEventListener('click', () => closeLayer('login-modal'));
   
-  // LOGIN FORM - Conexión directa con AuthModule
+  // LOGIN FORM - Autenticación y limpieza de campos
   $('login-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const userInput = $('login-user').value;
@@ -403,6 +403,8 @@ function bindEvents() {
     if (window.AuthModule && window.AuthModule.login(userInput, passInput)) {
       localStorage.setItem('kiwi_admin_session', 'active');
       $('login-error').classList.add('hidden');
+      $('login-user').value = '';
+      $('login-password').value = '';
       closeLayer('login-modal');
       showAdmin();
     } else {
