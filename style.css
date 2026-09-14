@@ -297,14 +297,16 @@ a { color: inherit; }
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
 
-/* IMÁGENES: Sin relleno, abarcando todo el ancho y alto del contenedor superior de la tarjeta */
+/* MODIFICADO: object-fit cambiado a 'contain' y color de fondo ajustado para mostrar la imagen completa */
 .product-art {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 180px;
   overflow: hidden;
-  background-color: #f4efdd;
+  background-color: #eae5d2;
   padding: 0;
   margin: 0;
 }
@@ -315,7 +317,7 @@ a { color: inherit; }
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   border-top-left-radius: 17px;
