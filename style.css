@@ -297,28 +297,22 @@ a { color: inherit; }
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
 
-/* IMAGEN COMPLETA SIN RELLENO (object-fit: cover) */
+/* AJUSTE PARA IMAGEN COMPLETA SIN RELLENO Y SIN RECORTES */
 .product-art {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
-  height: 180px;
+  height: auto; /* Se elimina la altura fija para que se adapte a la imagen */
   overflow: hidden;
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 .product-art img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto; /* La altura se ajusta automáticamente */
   display: block;
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
@@ -534,7 +528,7 @@ a { color: inherit; }
   .search-box { width: 100%; margin-top: 15px; }
   .menu-toolbar h2 { font-size: 27px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
-  .product-art { height: 142px; }
+  .product-art { height: auto; } /* También ajustado aquí para que no recorte en móvil */
   .section-heading h3 { font-size: 25px; }
   .admin-page { padding: 16px 14px 60px; }
   .admin-header { display: block; }
