@@ -297,14 +297,14 @@ a { color: inherit; }
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
 
-/* AJUSTE PARA IMAGEN COMPLETA SIN RELLENO Y SIN RECORTES */
+/* IMAGEN COMPLETA SIN TEXTO NI COLOR DE FONDO SUPERIOR */
 .product-art {
   position: relative;
   display: block;
   width: 100%;
-  height: auto; /* Se elimina la altura fija para que se adapte a la imagen */
+  height: auto;
   overflow: hidden;
-  background-color: transparent;
+  background: transparent !important;
   padding: 0;
   margin: 0;
 }
@@ -312,7 +312,7 @@ a { color: inherit; }
   position: relative;
   z-index: 1;
   width: 100%;
-  height: auto; /* La altura se ajusta automáticamente */
+  height: auto;
   display: block;
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
@@ -320,14 +320,8 @@ a { color: inherit; }
 }
 .product-card:hover .product-art img { transform: scale(1.05); }
 
-.art-fallback { color: #677737; font: 700 34px 'Fraunces', serif; letter-spacing: -.06em; }
-.art-fallback::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 22% 28%, rgba(255, 255, 255, .42), transparent 28%), linear-gradient(135deg, rgba(255, 255, 255, .1), transparent 48%);
-}
-.product-tag { position: absolute; top: 10px; left: 10px; z-index: 2; padding: 5px 8px; border-radius: 7px 7px 7px 2px; color: #4a531d; background: var(--yellow); font-size: 10px; font-weight: 700; }
+/* OCULTAR LETRAS INICIALES Y ETIQUETA SUPERIOR */
+.art-fallback, .product-tag { display: none !important; }
 .product-body { display: flex; flex: 1; flex-direction: column; padding: 13px; }
 .product-title { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.18; }
 .product-desc { display: -webkit-box; min-height: 34px; margin: 6px 0 15px; overflow: hidden; color: var(--muted); font-size: 11px; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
@@ -528,7 +522,7 @@ a { color: inherit; }
   .search-box { width: 100%; margin-top: 15px; }
   .menu-toolbar h2 { font-size: 27px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
-  .product-art { height: auto; } /* También ajustado aquí para que no recorte en móvil */
+  .product-art { height: auto; }
   .section-heading h3 { font-size: 25px; }
   .admin-page { padding: 16px 14px 60px; }
   .admin-header { display: block; }
