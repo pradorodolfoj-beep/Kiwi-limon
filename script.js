@@ -196,11 +196,13 @@ const defaultProducts = [
   },
   {
     "id": 1784682815955,
-    "name": "Ensalada de frutas pequeña",
+    "name": "Ensalada de frutas",
     "category": "Ensaladas",
     "desc": "Piña, patilla, papaya, melón, fresa, kiwi, cambur y manzana.",
     "price": 10,
     "image": "image/ensaladapeq.jpg",
+    "isWeight": false,
+    "addons": [],
     "removals": [
       "Sin Piña",
       "Sin Patilla",
@@ -210,6 +212,16 @@ const defaultProducts = [
       "Sin Kiwi",
       "Sin Cambur",
       "Sin Manzana"
+    ],
+    "sizes": [
+      {
+        "name": "Pequeña",
+        "price": 0
+      },
+      {
+        "name": "Grande",
+        "price": 2
+      }
     ]
   },
   {
@@ -297,7 +309,26 @@ const defaultProducts = [
     "category": "Jugos duplicados",
     "desc": "La dupla favorita: fresa y cambur en un vaso.",
     "price": 4,
-    "image": "image/duplicadofresacambur.jpg"
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
   },
   {
     "id": 1784683587530,
@@ -702,6 +733,403 @@ const defaultProducts = [
         "price": 3
       }
     ]
+  },
+  {
+    "id": 1794180429636,
+    "name": "Jugo de Kiwi",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180586544,
+    "name": "Duplicado Fresa Parchita",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180633243,
+    "name": "Duplicado Fresa Mora",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180765955,
+    "name": "Duplicado Parchita Mora",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180797592,
+    "name": "Duplicado Papaya Naranja",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180832058,
+    "name": "Duplicado Papaya Limon",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180881478,
+    "name": "Duplicado Papaya Parchita",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180923906,
+    "name": "Duplicado Mango Parchita",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794180992669,
+    "name": "Duplicado Piña Parchita",
+    "category": "Jugos duplicados",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181032861,
+    "name": "Don verde",
+    "category": "Detox",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181138153,
+    "name": "Ni Tan Verde",
+    "category": "Detox",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181240457,
+    "name": "Tio Tomate",
+    "category": "Detox",
+    "desc": "",
+    "price": 3.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181269845,
+    "name": "Media Naranja",
+    "category": "Detox",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181310320,
+    "name": "3 en 1 Licuado",
+    "category": "Detox",
+    "desc": "",
+    "price": 3.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181349122,
+    "name": "3 en 1 Extractor",
+    "category": "Detox",
+    "desc": "",
+    "price": 5.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181377047,
+    "name": "Anana",
+    "category": "Detox",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181417022,
+    "name": "Vida Verde",
+    "category": "Detox",
+    "desc": "",
+    "price": 5.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181793463,
+    "name": "Naranja Fresh",
+    "category": "Detox",
+    "desc": "",
+    "price": 5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181832259,
+    "name": "Ginger Shot",
+    "category": "Detox",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794181863146,
+    "name": "Zanahoria 5x5",
+    "category": "Detox",
+    "desc": "",
+    "price": 5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
   }
 ];
 
