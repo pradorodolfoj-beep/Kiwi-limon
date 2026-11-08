@@ -266,11 +266,12 @@ const defaultProducts = [
   },
   {
     "id": 1784683246919,
-    "name": "Jugo de fresas",
+    "name": "Jugo de fresa",
     "category": "Jugos Básicos",
     "desc": "Fresas licuadas al momento, dulces y frías.",
     "price": 3,
     "image": "image/jugofresa.jpg",
+    "isWeight": false,
     "addons": [
       {
         "name": "Leche",
@@ -278,16 +279,17 @@ const defaultProducts = [
       },
       {
         "name": "Yogurt",
-        "price": 1
+        "price": 1.5
       },
       {
         "name": "Vainilla",
-        "price": 0.5
+        "price": 0.2
       }
     ],
     "removals": [
       "Sin Azúcar"
-    ]
+    ],
+    "sizes": []
   },
   {
     "id": 1784683317507,
@@ -381,6 +383,325 @@ const defaultProducts = [
     "price": 9,
     "image": "image/kiwi.jpg",
     "isWeight": true
+  },
+  {
+    "id": 1794169320914,
+    "name": "Jugo de Mora",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169343332,
+    "name": "Jugo de Piña",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169379331,
+    "name": "Jugo de Parchita",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169410250,
+    "name": "Jugo de Guanabana",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169434754,
+    "name": "Jugo de Mango",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169501753,
+    "name": "Jugo de Papaya",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169539536,
+    "name": "Jugo de Melon",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169571720,
+    "name": "Jugo de Patilla",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169602801,
+    "name": "Jugo de Guayaba",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 2.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794169766631,
+    "name": "Jugo de Naranja Liquido",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "250ml",
+        "price": 0
+      },
+      {
+        "name": "330ml",
+        "price": 1
+      },
+      {
+        "name": "500ml",
+        "price": 3
+      }
+    ]
+  },
+  {
+    "id": 1794169929279,
+    "name": "Jugo de Naranja Concentrado",
+    "category": "Jugos Básicos",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [
+      {
+        "name": "Leche",
+        "price": 1
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.5
+      },
+      {
+        "name": "Vainilla",
+        "price": 0.2
+      }
+    ],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "250ml",
+        "price": 0
+      },
+      {
+        "name": "330ml",
+        "price": 2
+      },
+      {
+        "name": "500ml",
+        "price": 3
+      }
+    ]
   }
 ];
 
