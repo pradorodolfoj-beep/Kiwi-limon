@@ -10,43 +10,11 @@ const categoryColors = {
   'Snack y saludable': '#d4dd87', 'Acai bowl': '#c1a8d8', 'Michell parfait': '#efb2b1',
   'Bowl': '#e5d66c', 'Ensaladas': '#bdd989', 'Fresas con crema': '#efa4a6',
   'Tizanas': '#f2c662', 'Jugos Básicos': '#e9a86d', 'Jugos duplicados': '#eea3a7',
-  'Limonadas': '#e9dc72', 'Especiales': '#b9d084', 'Cafés': '#c9a37e',
-  'Infusiones': '#c4a8cf', 'Detox': '#a9d39e', 'Frutas': '#d2df80'
+  'Limonadas': '#e9dc72', 'Especiales': '#b9d084', 'Cafés': '#c9a37e', 'Infusiones': '#c4a8cf',
+  'Detox': '#a9d39e', 'Mojitos': '#f1bf73' , 'Frutas': '#d2df80'
 };
 
 const defaultProducts = [
-  {
-    "id": 1718100000001,
-    "name": "Panquecas Premium",
-    "category": "Panquecas",
-    "desc": "Panquecas, fresa, kiwi, cambur y Nutella.",
-    "price": 12,
-    "image": "image/panquecaspremium.jpg",
-    "addons": [
-      {
-        "name": "Kiwi",
-        "price": 1
-      },
-      {
-        "name": "Fresa",
-        "price": 0.5
-      },
-      {
-        "name": "Cambur",
-        "price": 0.5
-      },
-      {
-        "name": "Nutella 2oz",
-        "price": 4
-      }
-    ],
-    "removals": [
-      "Sin Kiwi",
-      "Sin Fresa",
-      "Sin Cambur",
-      "Sin Nutella"
-    ]
-  },
   {
     "id": 1718100000002,
     "name": "Smoothie Frutos Rojos",
@@ -1130,6 +1098,285 @@ const defaultProducts = [
       "Sin azucar"
     ],
     "sizes": []
+  },
+  {
+    "id": 1794184930933,
+    "name": "Frutos Rojos",
+    "category": "Smoothies",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794184961956,
+    "name": "Dejavu",
+    "category": "Smoothies",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185015126,
+    "name": "Caribeño",
+    "category": "Smoothies",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185045178,
+    "name": "Tropical",
+    "category": "Smoothies",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185104510,
+    "name": "Crema real",
+    "category": "Smoothies",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185216124,
+    "name": "Mr. Banana",
+    "category": "Especiales",
+    "desc": "",
+    "price": 5.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185275160,
+    "name": "Avena Mix",
+    "category": "Especiales",
+    "desc": "",
+    "price": 6.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185315607,
+    "name": "Choco Ice",
+    "category": "Especiales",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185372597,
+    "name": "Coquitos",
+    "category": "Especiales",
+    "desc": "",
+    "price": 7,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185531984,
+    "name": "Limonadas Tradicional",
+    "category": "Limonadas",
+    "desc": "",
+    "price": 2.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185563205,
+    "name": "Limonada de Hierbabuena",
+    "category": "Especiales",
+    "desc": "",
+    "price": 2.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185613438,
+    "name": "Limonada de Parchita",
+    "category": "Limonadas",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185652710,
+    "name": "Limonada Especial",
+    "category": "Limonadas",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185943120,
+    "name": "LImonada Kiwi Limon",
+    "category": "Limonadas",
+    "desc": "",
+    "price": 7,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794185978215,
+    "name": "Limonada de Coco",
+    "category": "Limonadas",
+    "desc": "",
+    "price": 4.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794186059071,
+    "name": "Infusion Dorada",
+    "category": "Infusiones",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": [
+      {
+        "name": "Caliente",
+        "price": 0
+      },
+      {
+        "name": "Fria",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": 1794186146029,
+    "name": "Infusion Oriental",
+    "category": "Infusiones",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": [
+      {
+        "name": "Caliente",
+        "price": 0
+      },
+      {
+        "name": "Fria",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": 1794186200176,
+    "name": "Infusion Mia",
+    "category": "Infusiones",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": [
+      {
+        "name": "Caliente",
+        "price": 0
+      },
+      {
+        "name": "Fria",
+        "price": 1.5
+      }
+    ]
   }
 ];
 
