@@ -2,7 +2,7 @@ const categories = [
   'Todos', 'Panquecas', 'Sandwiches', 'Snack y saludable', 'Acai bowl',
   'Michell parfait', 'Bowl', 'Ensaladas', 'Fresas con crema', 'Tizanas',
   'Jugos Básicos', 'Jugos duplicados', 'Limonadas', 'Smoothies', 'Especiales',
-  'Cafés', 'Infusiones', 'Detox', 'Detox', 'Frutas'
+  'Cafés', 'Infusiones', 'Detox', 'Mojitos', 'Frutas'
 ];
 
 const categoryColors = {
