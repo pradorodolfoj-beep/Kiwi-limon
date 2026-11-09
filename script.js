@@ -2,7 +2,7 @@ const categories = [
   'Todos', 'Panquecas', 'Sandwiches', 'Snack y saludable', 'Acai bowl',
   'Michell parfait', 'Bowl', 'Ensaladas', 'Fresas con crema', 'Tizanas',
   'Jugos Básicos', 'Jugos duplicados', 'Limonadas', 'Smoothies', 'Especiales',
-  'Cafés', 'Infusiones', 'Detox', 'Mojitos', 'Frutas'
+  'Cafés', 'Infusiones', 'Detox', 'Mojitos', 'Aromaticas', 'Frutas'
 ];
 
 const categoryColors = {
@@ -11,7 +11,7 @@ const categoryColors = {
   'Bowl': '#e5d66c', 'Ensaladas': '#bdd989', 'Fresas con crema': '#efa4a6',
   'Tizanas': '#f2c662', 'Jugos Básicos': '#e9a86d', 'Jugos duplicados': '#eea3a7',
   'Limonadas': '#e9dc72', 'Especiales': '#b9d084', 'Cafés': '#c9a37e', 'Infusiones': '#c4a8cf',
-  'Detox': '#a9d39e', 'Mojitos': '#f1bf73', 'Frutas': '#d2df80'
+  'Detox': '#a9d39e', 'Mojitos': '#f1bf73', 'Aromaticas': '#a9d39e', 'Frutas': '#d2df80'
 };
 
 const defaultProducts = [
@@ -1377,6 +1377,48 @@ const defaultProducts = [
         "price": 1.5
       }
     ]
+  },
+  {
+    "id": 1794187964115,
+    "name": "Mojito Especial",
+    "category": "Mojitos",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794188065184,
+    "name": "Mojito Tradicional",
+    "category": "Mojitos",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794188238641,
+    "name": "Mojito de Parchita",
+    "category": "Mojitos",
+    "desc": "",
+    "price": 4,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
   }
 ];
 
