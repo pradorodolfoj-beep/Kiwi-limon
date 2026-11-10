@@ -1419,6 +1419,451 @@ const defaultProducts = [
       "Sin azucar"
     ],
     "sizes": []
+  },
+  {
+    "id": 1794332259408,
+    "name": "Michell Parfait",
+    "category": "Michell parfait",
+    "desc": "",
+    "price": 10,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1794332304946,
+    "name": "Tizana",
+    "category": "Tizanas",
+    "desc": "",
+    "price": 6.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 0.5
+      }
+    ]
+  },
+  {
+    "id": 1794332347609,
+    "name": "Fresas con Crema Ferrero y Nutella",
+    "category": "Fresas con crema",
+    "desc": "",
+    "price": 10,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1794332384146,
+    "name": "Fresas con Crema Kiwi limon",
+    "category": "Fresas con crema",
+    "desc": "",
+    "price": 8,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1794332425268,
+    "name": "Fresas con Crema",
+    "category": "Fresas con crema",
+    "desc": "",
+    "price": 7,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 1
+      }
+    ]
+  },
+  {
+    "id": 1794332475696,
+    "name": "Tabla de Frutas Basica",
+    "category": "Ensaladas",
+    "desc": "",
+    "price": 12,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "Miel",
+        "price": 0
+      },
+      {
+        "name": "Nutella",
+        "price": 1
+      }
+    ]
+  },
+  {
+    "id": 1794332501080,
+    "name": "Tabla de Frutas Premium",
+    "category": "Ensaladas",
+    "desc": "",
+    "price": 14,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "Miel",
+        "price": 0
+      },
+      {
+        "name": "Nutella",
+        "price": 4
+      }
+    ]
+  },
+  {
+    "id": 1794332527993,
+    "name": "Cafe Espresso",
+    "category": "Cafés",
+    "desc": "",
+    "price": 1.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332540680,
+    "name": "Cafe Americano",
+    "category": "Cafés",
+    "desc": "",
+    "price": 1.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332554977,
+    "name": "Cafe Guayoyo",
+    "category": "Cafés",
+    "desc": "",
+    "price": 1.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332585331,
+    "name": "Cafe Capucciono",
+    "category": "Cafés",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332598009,
+    "name": "Cafe Latte",
+    "category": "Cafés",
+    "desc": "",
+    "price": 2.99,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332615344,
+    "name": "Cafe Latte Vainilla",
+    "category": "Cafés",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332639696,
+    "name": "Cafe Macchiato",
+    "category": "Cafés",
+    "desc": "",
+    "price": 2.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332660896,
+    "name": "Chocolate Caliente",
+    "category": "Cafés",
+    "desc": "",
+    "price": 3.5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332704987,
+    "name": "Ice Coffe Latte",
+    "category": "Cafés",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332737526,
+    "name": "Ensalada de Frutas",
+    "category": "Ensaladas",
+    "desc": "",
+    "price": 10,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "Pequeña",
+        "price": 0
+      },
+      {
+        "name": "Grande",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1794332776408,
+    "name": "Ensalada Domo",
+    "category": "Ensaladas",
+    "desc": "",
+    "price": 5,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": [
+      {
+        "name": "10oz",
+        "price": 0
+      },
+      {
+        "name": "14oz",
+        "price": 2
+      }
+    ]
+  },
+  {
+    "id": 1794332800575,
+    "name": "Cafe Latte Cinnamon",
+    "category": "Cafés",
+    "desc": "",
+    "price": 3,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [
+      "Sin azucar"
+    ],
+    "sizes": []
+  },
+  {
+    "id": 1794332819375,
+    "name": "Ice Coffe Caramel",
+    "category": "Cafés",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332899646,
+    "name": "Ice Coffe Chocolate",
+    "category": "Cafés",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794332942061,
+    "name": "Frapucciono Chocolate",
+    "category": "Cafés",
+    "desc": "",
+    "price": 8,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333083794,
+    "name": "Frapucciono Caramelo",
+    "category": "Cafés",
+    "desc": "",
+    "price": 8,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333115357,
+    "name": "Panquecas Basicas",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 7,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333143740,
+    "name": "Panquecas de la Casa",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 10,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333157220,
+    "name": "Panquecas Americanas",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 8,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333178109,
+    "name": "Panquecas Basicas Fit",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333285285,
+    "name": "Panquecas de la Casa Fit",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 7,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
+  },
+  {
+    "id": 1794333305915,
+    "name": "Panquecas Americanas Fit",
+    "category": "Panquecas",
+    "desc": "",
+    "price": 6,
+    "image": "",
+    "isWeight": false,
+    "addons": [],
+    "removals": [],
+    "sizes": []
   }
 ];
 
