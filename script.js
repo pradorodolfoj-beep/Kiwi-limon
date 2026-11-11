@@ -1995,7 +1995,7 @@ function renderAdminTable() {
 }
 
 function populateProductCategories() {
-  $('product-category').innerHTML = categories.slice(1).map((category) => `<option>${escapeHtml(category)}</option>`).join('');
+  ('product-category').innerHTML = categories.slice(1).map((category) => `<option>${escapeHtml(category)}</option>`).join('');
 }
 
 function openProductForm(productId = 0) {
