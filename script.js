@@ -1399,7 +1399,7 @@ function renderCategories() {
   });
 }
 
-// Plantilla visual de la tarjeta de producto con el contenedor .product-art correcto
+// Plantilla visual de la tarjeta de producto
 function productCard(product, index) {
   return `
     <div class="product-card">
