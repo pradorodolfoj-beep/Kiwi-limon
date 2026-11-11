@@ -716,7 +716,7 @@ let products = [
     "category": "Infusiones",
     "desc": "",
     "price": 3,
-    "image": "image/infusion.jpg",
+    "image": "image/infusionm.jpg",
     "isWeight": false,
     "addons": [],
     "removals": ["Sin azucar"],
