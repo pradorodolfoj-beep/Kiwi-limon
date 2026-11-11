@@ -217,6 +217,34 @@ let products = [
     "sizes": []
   },
   {
+  "id": 1794422660475,
+  "name": "Jugo de Melocoton",
+  "category": "Jugos Básicos",
+  "desc": "",
+  "price": 4.5,
+  "image": "image/Jmelocoton.jpg",
+  "isWeight": false,
+  "addons": [],
+  "removals": [
+    "Sin azucar"
+  ],
+  "sizes": []
+  }
+  {
+  "id": 1794422733058,
+  "name": "Jugo de Fresa",
+  "category": "Jugos Básicos",
+  "desc": "",
+  "price": 4.5,
+  "image": "image/Jfresa.jpg",
+  "isWeight": false,
+  "addons": [],
+  "removals": [
+    "Sin azucar"
+  ],
+  "sizes": []
+  }
+  {
     "id": 1794180586544,
     "name": "Duplicado Fresa Parchita",
     "category": "Jugos duplicados",
