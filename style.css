@@ -297,7 +297,7 @@ a { color: inherit; }
 }
 .product-card:hover { border-color: #c3cc72; box-shadow: 0 16px 34px rgba(61, 71, 31, .13); transform: translateY(-4px); }
 
-/* CONTENEDOR AJUSTADO A LA PROPORCIÓN EXACTA DE CADA IMAGEN */
+/* CONTENEDOR AJUSTADO A LA PROPORCIÓN NATURAL DE CADA IMAGEN */
 .product-art {
   position: relative;
   display: block;
@@ -477,14 +477,10 @@ a { color: inherit; }
 .admin-header h1 { margin: 0; color: var(--ink); font: 700 32px 'Fraunces', serif; letter-spacing: -.04em; }
 .admin-header p { margin: 3px 0 0; color: #75805d; font-size: 13px; }
 .admin-actions { display: flex; gap: 8px; }
-.admin-grid { display: grid; grid-template-columns: 320px 1fr; gap: 18px; align-items: start; }
+.admin-grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: start; }
 .panel { border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: var(--shadow); }
 .panel-head { padding: 14px 18px; border-bottom: 1px solid #e2e3c8; }
 .panel-head h2 { margin: 0; color: #536329; font-size: 15px; }
-.active-menu { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; background: #edf0c9; }
-.active-icon { color: #61762d; font-size: 22px; }
-.active-menu strong { display: block; color: #485a23; font-size: 13px; }
-.active-menu small { display: block; margin-top: 2px; color: #82905c; font-size: 11px; }
 .admin-help { margin: 0; color: #7a855d; font-size: 12px; line-height: 1.5; }
 .compact-button { min-height: 38px; padding: 0 12px; }
 .auto-button { width: auto; padding: 0 15px; }
@@ -504,7 +500,6 @@ a { color: inherit; }
 
 @media (max-width: 999px) {
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .admin-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 699px) {
   .topbar { height: 72px; padding: 0 14px; }
@@ -524,7 +519,6 @@ a { color: inherit; }
   .admin-header { display: block; }
   .admin-header h1 { font-size: 26px; }
   .admin-actions { margin-top: 10px; }
-  .admin-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 380px) {
   .cart-button span:nth-child(2) { display: none; }
