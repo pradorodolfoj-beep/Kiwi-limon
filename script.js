@@ -995,7 +995,7 @@ let products = [
     "category": "Ensaladas",
     "desc": "",
     "price": 5,
-    "image": "image/Ensaldad.jpg",
+    "image": "image/Ensaladad.jpg",
     "isWeight": false,
     "addons": [],
     "removals": [],
