@@ -237,7 +237,7 @@ const defaultProducts = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 2.5,
-    "image": "",
+    "image": "image/",
     "isWeight": false,
     "addons": [
       {
