@@ -14,7 +14,7 @@ const categoryColors = {
   'Detox': '#a9d39e', 'Mojitos': '#f1bf73', 'Aromaticas': '#a9d39e', 'Frutas': '#d2df80'
 };
 
-// Variable unificada para evitar conflictos
+// Arreglo central de productos (Modificable directamente aquí)
 let products = [
   {
     "id": 1794169320914,
@@ -587,7 +587,7 @@ let products = [
   {
     "id": 1794185563205,
     "name": "Limonada de Hierbabuena",
-    "category": "Limonadas",
+    "category": "Especiales",
     "desc": "",
     "price": 2.5,
     "image": "image/limonadah.jpg",
@@ -1326,25 +1326,20 @@ let currentDraft = null;
 let delivery = 'pickup';
 let paymentMethod = '';
 
-// Helper selector rapido
 const $ = (id) => document.getElementById(id);
 
-// Función auxiliar para formatear dinero
 function money(val) {
   return `$${Number(val || 0).toFixed(2)}`;
 }
 
-// Escapar HTML básico
 function escapeHtml(str) {
   return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// Obtener iniciales para las miniaturas del admin
 function initials(name) {
   return name ? name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase() : 'KL';
 }
 
-// Toast de notificaciones simples
 function showToast(msg) {
   let toast = $('toast-notification');
   if (!toast) {
@@ -1358,7 +1353,6 @@ function showToast(msg) {
   setTimeout(() => { toast.style.display = 'none'; }, 3000);
 }
 
-// Cálculo del total de un producto con extras y tamaños
 function productTotal(item) {
   let base = item.price;
   if (item.selectedSize) base += (item.selectedSize.price || 0);
@@ -1371,7 +1365,6 @@ function productTotal(item) {
   return base;
 }
 
-// Filtrar productos por búsqueda y categoría seleccionada
 function filteredProducts() {
   return products.filter((p) => {
     const matchesCategory = activeCategory === 'Todos' || p.category === activeCategory;
@@ -1380,7 +1373,6 @@ function filteredProducts() {
   });
 }
 
-// Renderizar las categorías (Píldoras o pestañas de navegación)
 function renderCategories() {
   const container = $('categories-container') || document.querySelector('.categories') || $('categories') || $('category-rail');
   if (!container) return;
@@ -1399,7 +1391,6 @@ function renderCategories() {
   });
 }
 
-// Plantilla visual de la tarjeta de producto
 function productCard(product, index) {
   return `
     <div class="product-card">
@@ -1661,19 +1652,10 @@ function renderAdminTable() {
       <td><div class="table-product"><span class="table-thumb">${escapeHtml(initials(product.name))}</span><div><strong>${escapeHtml(product.name)}</strong><small>${product.isWeight ? 'Venta por kg' : 'Precio fijo'}</small></div></div></td>
       <td>${escapeHtml(product.category)}</td>
       <td>${money(product.price)}</td>
-      <td><div class="table-actions"><button class="small-action" data-edit-product="${product.id}" type="button">✎</button><button class="small-action danger" data-delete-product="${product.id}" type="button">×</button></div></td>
+      <td><div class="table-actions"><button class="small-action" data-edit-product="${product.id}" type="button">✎</button></div></td>
     </tr>
   `).join('');
   tbody.querySelectorAll('[data-edit-product]').forEach((button) => button.addEventListener('click', () => openProductForm(Number(button.dataset.editProduct))));
-  tbody.querySelectorAll('[data-delete-product]').forEach((button) => button.addEventListener('click', () => {
-    const product = products.find((item) => item.id === Number(button.dataset.deleteProduct));
-    if (product && window.confirm(`¿Eliminar ${product.name}?`)) {
-      products = products.filter((item) => item.id !== product.id);
-      renderAdminTable();
-      renderMenu();
-      showToast('Producto eliminado.');
-    }
-  }));
 }
 
 function populateProductCategories() {
@@ -1792,11 +1774,32 @@ function bindEvents() {
       return;
     }
 
-    products = id ? products.map((item) => item.id === id ? next : item) : [...products, next];
-    closeLayer('product-modal');
-    renderAdminTable();
-    renderMenu();
-    showToast('Menú actualizado.');
+    // Generar el código JSON exacto para copiar y pegar en el script
+    const jsonCode = JSON.stringify(next, null, 2);
+    
+    // Mostrar cajón de código generado
+    let codeBox = $('code-box-output');
+    if (!codeBox) {
+      const modalBody = document.querySelector('#product-modal .modal-content') || document.querySelector('#product-modal');
+      const boxContainer = document.createElement('div');
+      boxContainer.style.cssText = 'margin-top: 15px; padding: 12px; background: #f4efdd; border-radius: 12px; border: 1px solid #d2d79f;';
+      boxContainer.innerHTML = `
+        <label class="option-label" style="margin-bottom:6px;">Copia este código y pégalo en tu <code>script.js</code>:</label>
+        <textarea id="code-box-output" class="textarea-field" readonly style="font-family:monospace; font-size:11px; height:110px; background:#fff;"></textarea>
+        <button type="button" id="copy-code-btn" class="secondary-button" style="width:100%; margin-top:8px;">Copiar código al portapapeles</button>
+      `;
+      modalBody.appendChild(boxContainer);
+      
+      $('copy-code-btn').addEventListener('click', () => {
+        const ta = $('code-box-output');
+        ta.select();
+        document.execCommand('copy');
+        showToast('¡Código copiado al portapapeles!');
+      });
+      codeBox = $('code-box-output');
+    }
+    codeBox.value = jsonCode;
+    showToast('¡Objeto generado con éxito en el cajón inferior!');
   });
 }
 
