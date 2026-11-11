@@ -1382,10 +1382,10 @@ function filteredProducts() {
 
 // Renderizar las categorías (Píldoras o pestañas de navegación)
 function renderCategories() {
-  const container = $('categories-container') || document.querySelector('.categories') || $('categories');
+  const container = $('categories-container') || document.querySelector('.categories') || $('categories') || $('category-rail');
   if (!container) return;
   container.innerHTML = categories.map((cat) => `
-    <button type="button" class="category-pill ${activeCategory === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
+    <button type="button" class="category-chip ${activeCategory === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
       ${escapeHtml(cat)}
     </button>
   `).join('');
@@ -1399,15 +1399,17 @@ function renderCategories() {
   });
 }
 
-// Plantilla visual de la tarjeta de producto
+// Plantilla visual de la tarjeta de producto con el contenedor .product-art correcto
 function productCard(product, index) {
   return `
     <div class="product-card">
-      ${product.image ? `<div class="product-img"><img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none'"></div>` : ''}
-      <div class="product-info">
-        <h4>${escapeHtml(product.name)}</h4>
-        <p>${escapeHtml(product.desc || '')}</p>
-        <div class="product-footer">
+      <div class="product-art">
+        ${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none'">` : ''}
+      </div>
+      <div class="product-body">
+        <h4 class="product-title">${escapeHtml(product.name)}</h4>
+        <p class="product-desc">${escapeHtml(product.desc || '')}</p>
+        <div class="product-foot">
           <span class="price">${money(product.price)}</span>
           <button class="add-button" type="button" data-add-product="${product.id}">Agregar</button>
         </div>
