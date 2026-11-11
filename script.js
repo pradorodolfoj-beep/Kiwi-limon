@@ -860,7 +860,7 @@ const defaultProducts = [
   {
     "id": 1794185563205,
     "name": "Limonada de Hierbabuena",
-    "category": "Especiales",
+    "category": "Limonadas",
     "desc": "",
     "price": 2.5,
     "image": "image/limonadah.jpg",
@@ -1740,77 +1740,6 @@ const defaultProducts = [
     "sizes": []
   }
 ];
-const $ = (id) => document.getElementById(id);
-const money = (value) => `$${Number(value || 0).toFixed(2)}`;
-const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char]));
-const initials = (name) => name.split(' ').slice(0, 2).map((word) => word[0]).join('').toUpperCase();
-
-const productTotal = (item) => {
-  const weightTotal = item.isWeight ? Number(item.chosenWeight || 1) : 1;
-  const sizeTotal = item.selectedSize ? Number(item.selectedSize.price || 0) : 0;
-  const addonTotal = (item.selectedAddons || []).reduce((total, addon) => total + Number(addon.price || 0), 0);
-  return Number(item.price || 0) * weightTotal + sizeTotal + addonTotal;
-};
-
-let products = structuredClone(defaultProducts);
-let cart = [];
-let activeCategory = 'Todos';
-let searchText = '';
-let currentDraft = null;
-let delivery = 'pickup';
-let paymentMethod = 'Pago Móvil';
-let toastTimer;
-
-function showToast(message) {
-  $('toast').textContent = message;
-  $('toast').classList.remove('hidden');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => $('toast').classList.add('hidden'), 2800);
-}
-
-function renderCategories() {
-  $('category-rail').innerHTML = categories.map((category) => `
-    <button class="category-chip ${activeCategory === category ? 'active' : ''}" data-category="${escapeHtml(category)}" type="button">${escapeHtml(category)}</button>
-  `).join('');
-  $('category-rail').querySelectorAll('[data-category]').forEach((button) => {
-    button.addEventListener('click', () => {
-      activeCategory = button.dataset.category;
-      renderMenu();
-      renderCategories();
-    });
-  });
-}
-
-function filteredProducts() {
-  const query = searchText.toLowerCase().trim();
-  return products.filter((product) => {
-    const categoryMatch = activeCategory === 'Todos' || product.category === activeCategory;
-    const text = `${product.name} ${product.desc} ${product.category}`.toLowerCase();
-    return categoryMatch && text.includes(query);
-  });
-}
-
-function productCard(product, index) {
-  const color = categoryColors[product.category] || '#dbe6a0';
-  const tag = product.isWeight ? 'POR PESO' : product.name === 'Acai Amazonas' ? 'FAVORITO' : '';
-  return `
-    <article class="product-card" style="animation-delay:${Math.min(index * 45, 240)}ms">
-      <div class="product-art" style="background:${color}">
-        <span class="art-fallback">${escapeHtml(initials(product.name))}</span>
-        ${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.remove()">` : ''}
-        ${tag ? `<span class="product-tag">${tag}</span>` : ''}
-      </div>
-      <div class="product-body">
-        <h4 class="product-title">${escapeHtml(product.name)}</h4>
-        <p class="product-desc">${escapeHtml(product.desc)}</p>
-        <div class="product-foot">
-          <span class="price">${money(product.price)}${product.isWeight ? '<small> / kg</small>' : ''}</span>
-          <button class="add-button" data-add-product="${product.id}" type="button">+ Agregar</button>
-        </div>
-      </div>
-    </article>
-  `;
-}
 
 function renderMenu() {
   const visible = filteredProducts();
