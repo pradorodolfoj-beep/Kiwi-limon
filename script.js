@@ -14,7 +14,8 @@ const categoryColors = {
   'Detox': '#a9d39e', 'Mojitos': '#f1bf73', 'Aromaticas': '#a9d39e', 'Frutas': '#d2df80'
 };
 
-const defaultProducts = [
+// Variable unificada para evitar conflictos
+let products = [
   {
     "id": 1794169320914,
     "name": "Jugo de Mora",
@@ -24,22 +25,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -51,22 +41,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -78,22 +57,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -105,22 +73,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -132,22 +89,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -159,22 +105,11 @@ const defaultProducts = [
     "image": "image/Jpapaya.jpg",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -186,22 +121,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -213,22 +137,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -237,25 +150,14 @@ const defaultProducts = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 2.5,
-    "image": "image/",
+    "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -267,33 +169,15 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
     "removals": [],
     "sizes": [
-      {
-        "name": "250ml",
-        "price": 0
-      },
-      {
-        "name": "330ml",
-        "price": 1
-      },
-      {
-        "name": "500ml",
-        "price": 3
-      }
+      { "name": "250ml", "price": 0 },
+      { "name": "330ml", "price": 1 },
+      { "name": "500ml", "price": 3 }
     ]
   },
   {
@@ -305,33 +189,15 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
     "removals": [],
     "sizes": [
-      {
-        "name": "250ml",
-        "price": 0
-      },
-      {
-        "name": "330ml",
-        "price": 2
-      },
-      {
-        "name": "500ml",
-        "price": 3
-      }
+      { "name": "250ml", "price": 0 },
+      { "name": "330ml", "price": 2 },
+      { "name": "500ml", "price": 3 }
     ]
   },
   {
@@ -343,22 +209,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -370,22 +225,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -397,22 +241,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -424,22 +257,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -451,22 +273,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -478,22 +289,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -505,22 +305,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -532,22 +321,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -559,22 +337,11 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [
-      {
-        "name": "Leche",
-        "price": 1
-      },
-      {
-        "name": "Yogurt",
-        "price": 1.5
-      },
-      {
-        "name": "Vainilla",
-        "price": 0.2
-      }
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
     ],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -586,9 +353,7 @@ const defaultProducts = [
     "image": "image/Dverde.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -600,9 +365,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -614,9 +377,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -628,9 +389,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -642,9 +401,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -656,9 +413,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -670,9 +425,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -684,9 +437,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -698,9 +449,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -712,9 +461,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -726,9 +473,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -740,9 +485,7 @@ const defaultProducts = [
     "image": "image/Frutosr.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -754,9 +497,7 @@ const defaultProducts = [
     "image": "image/Dejavu.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -768,9 +509,7 @@ const defaultProducts = [
     "image": "image/Caribeño.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -782,9 +521,7 @@ const defaultProducts = [
     "image": "image/Cremar.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -796,9 +533,7 @@ const defaultProducts = [
     "image": "image/Mrbanana.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -810,9 +545,7 @@ const defaultProducts = [
     "image": "image/Avenamix.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -824,9 +557,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -838,23 +569,19 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
     "id": 1794185531984,
     "name": "Limonadas Tradicional",
     "category": "Limonadas",
-    "desc": "image/.jpg",
+    "desc": "",
     "price": 2.5,
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -866,9 +593,7 @@ const defaultProducts = [
     "image": "image/limonadah.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -880,9 +605,7 @@ const defaultProducts = [
     "image": "image/Limonadasp.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -894,9 +617,7 @@ const defaultProducts = [
     "image": "image/Limonadas.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -905,12 +626,10 @@ const defaultProducts = [
     "category": "Limonadas",
     "desc": "",
     "price": 7,
-    "image": "image/.jpg",
+    "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -922,9 +641,7 @@ const defaultProducts = [
     "image": "image/Limonadac.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -936,18 +653,10 @@ const defaultProducts = [
     "image": "image/Infusiond.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": [
-      {
-        "name": "Caliente",
-        "price": 0
-      },
-      {
-        "name": "Fria",
-        "price": 0
-      }
+      { "name": "Caliente", "price": 0 },
+      { "name": "Fria", "price": 0 }
     ]
   },
   {
@@ -959,18 +668,10 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": [
-      {
-        "name": "Caliente",
-        "price": 0
-      },
-      {
-        "name": "Fria",
-        "price": 0
-      }
+      { "name": "Caliente", "price": 0 },
+      { "name": "Fria", "price": 0 }
     ]
   },
   {
@@ -982,18 +683,10 @@ const defaultProducts = [
     "image": "image/infusion.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": [
-      {
-        "name": "Caliente",
-        "price": 0
-      },
-      {
-        "name": "Fria",
-        "price": 1.5
-      }
+      { "name": "Caliente", "price": 0 },
+      { "name": "Fria", "price": 1.5 }
     ]
   },
   {
@@ -1005,9 +698,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1019,9 +710,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1033,9 +722,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1047,18 +734,10 @@ const defaultProducts = [
     "image": "image/Parfait.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 2
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 2 }
     ]
   },
   {
@@ -1070,18 +749,10 @@ const defaultProducts = [
     "image": "image/Tizana.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 0.5
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 0.5 }
     ]
   },
   {
@@ -1095,14 +766,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 2
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 2 }
     ]
   },
   {
@@ -1116,14 +781,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 2
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 2 }
     ]
   },
   {
@@ -1137,14 +796,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 1
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 1 }
     ]
   },
   {
@@ -1158,14 +811,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Miel",
-        "price": 0
-      },
-      {
-        "name": "Nutella",
-        "price": 1
-      }
+      { "name": "Miel", "price": 0 },
+      { "name": "Nutella", "price": 1 }
     ]
   },
   {
@@ -1179,14 +826,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Miel",
-        "price": 0
-      },
-      {
-        "name": "Nutella",
-        "price": 4
-      }
+      { "name": "Miel", "price": 0 },
+      { "name": "Nutella", "price": 4 }
     ]
   },
   {
@@ -1234,23 +875,19 @@ const defaultProducts = [
     "image": "image/Capucciono.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
     "id": 1794332598009,
     "name": "Cafe Latte",
     "category": "Cafés",
-    "desc": "image/.jpg",
+    "desc": "",
     "price": 2.99,
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1262,9 +899,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1276,9 +911,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1287,12 +920,10 @@ const defaultProducts = [
     "category": "Cafés",
     "desc": "",
     "price": 3.5,
-    "image": "image/.jpg",
+    "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1318,14 +949,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Pequeña",
-        "price": 0
-      },
-      {
-        "name": "Grande",
-        "price": 2
-      }
+      { "name": "Pequeña", "price": 0 },
+      { "name": "Grande", "price": 2 }
     ]
   },
   {
@@ -1339,14 +964,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "10oz",
-        "price": 0
-      },
-      {
-        "name": "14oz",
-        "price": 2
-      }
+      { "name": "10oz", "price": 0 },
+      { "name": "14oz", "price": 2 }
     ]
   },
   {
@@ -1358,9 +977,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1477,7 +1094,7 @@ const defaultProducts = [
     "category": "Panquecas",
     "desc": "",
     "price": 6,
-    "image": "image/.jpg",
+    "image": "",
     "isWeight": false,
     "addons": [],
     "removals": [],
@@ -1494,14 +1111,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Pan Blanco",
-        "price": 0
-      },
-      {
-        "name": "Pan Integral",
-        "price": 0
-      }
+      { "name": "Pan Blanco", "price": 0 },
+      { "name": "Pan Integral", "price": 0 }
     ]
   },
   {
@@ -1515,14 +1126,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Reduccion de Parchita",
-        "price": 0
-      },
-      {
-        "name": "Mermelada de Piña",
-        "price": 0
-      }
+      { "name": "Reduccion de Parchita", "price": 0 },
+      { "name": "Mermelada de Piña", "price": 0 }
     ]
   },
   {
@@ -1534,9 +1139,7 @@ const defaultProducts = [
     "image": "image/Amazonas.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin Azucar"
-    ],
+    "removals": ["Sin Azucar"],
     "sizes": []
   },
   {
@@ -1548,9 +1151,7 @@ const defaultProducts = [
     "image": "image/Praia.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1562,9 +1163,7 @@ const defaultProducts = [
     "image": "image/Aracaju.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1576,9 +1175,7 @@ const defaultProducts = [
     "image": "image/Roraima.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1604,14 +1201,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Pan Blanco",
-        "price": 0
-      },
-      {
-        "name": "Pan Intengral",
-        "price": 0
-      }
+      { "name": "Pan Blanco", "price": 0 },
+      { "name": "Pan Intengral", "price": 0 }
     ]
   },
   {
@@ -1637,14 +1228,8 @@ const defaultProducts = [
     "addons": [],
     "removals": [],
     "sizes": [
-      {
-        "name": "Pan Blanco",
-        "price": 0
-      },
-      {
-        "name": "Pan Integral",
-        "price": 0
-      }
+      { "name": "Pan Blanco", "price": 0 },
+      { "name": "Pan Integral", "price": 0 }
     ]
   },
   {
@@ -1656,9 +1241,7 @@ const defaultProducts = [
     "image": "image/Coquitos.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1670,9 +1253,7 @@ const defaultProducts = [
     "image": "image/Mocca.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1684,9 +1265,7 @@ const defaultProducts = [
     "image": "",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1722,9 +1301,7 @@ const defaultProducts = [
     "image": "image/Lattec.jpg",
     "isWeight": false,
     "addons": [],
-    "removals": [
-      "Sin azucar"
-    ],
+    "removals": ["Sin azucar"],
     "sizes": []
   },
   {
@@ -1741,7 +1318,108 @@ const defaultProducts = [
   }
 ];
 
+// Variables de estado del menú
+let activeCategory = 'Todos';
+let searchText = '';
+let cart = [];
+let currentDraft = null;
+let delivery = 'pickup';
+let paymentMethod = '';
+
+// Helper selector rapido
+const $ = (id) => document.getElementById(id);
+
+// Función auxiliar para formatear dinero
+function money(val) {
+  return `$${Number(val || 0).toFixed(2)}`;
+}
+
+// Escapar HTML básico
+function escapeHtml(str) {
+  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Obtener iniciales para las miniaturas del admin
+function initials(name) {
+  return name ? name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase() : 'KL';
+}
+
+// Toast de notificaciones simples
+function showToast(msg) {
+  let toast = $('toast-notification');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast-notification';
+    toast.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#333; color:#fff; padding:10px 20px; border-radius:8px; z-index:9999; font-size:14px;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 3000);
+}
+
+// Cálculo del total de un producto con extras y tamaños
+function productTotal(item) {
+  let base = item.price;
+  if (item.selectedSize) base += (item.selectedSize.price || 0);
+  if (item.selectedAddons) {
+    item.selectedAddons.forEach(a => base += (a.price || 0));
+  }
+  if (item.isWeight) {
+    base *= (item.chosenWeight || 1);
+  }
+  return base;
+}
+
+// Filtrar productos por búsqueda y categoría seleccionada
+function filteredProducts() {
+  return products.filter((p) => {
+    const matchesCategory = activeCategory === 'Todos' || p.category === activeCategory;
+    const matchesSearch = p.name.toLowerCase().includes(searchText.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+}
+
+// Renderizar las categorías (Píldoras o pestañas de navegación)
+function renderCategories() {
+  const container = $('categories-container') || document.querySelector('.categories') || $('categories');
+  if (!container) return;
+  container.innerHTML = categories.map((cat) => `
+    <button type="button" class="category-pill ${activeCategory === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
+      ${escapeHtml(cat)}
+    </button>
+  `).join('');
+
+  container.querySelectorAll('[data-cat]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.cat;
+      renderCategories();
+      renderMenu();
+    });
+  });
+}
+
+// Plantilla visual de la tarjeta de producto
+function productCard(product, index) {
+  return `
+    <div class="product-card">
+      ${product.image ? `<div class="product-img"><img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none'"></div>` : ''}
+      <div class="product-info">
+        <h4>${escapeHtml(product.name)}</h4>
+        <p>${escapeHtml(product.desc || '')}</p>
+        <div class="product-footer">
+          <span class="price">${money(product.price)}</span>
+          <button class="add-button" type="button" data-add-product="${product.id}">Agregar</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderMenu() {
+  const container = $('menu-container');
+  if (!container) return;
+
   const visible = filteredProducts();
   const groups = categories.slice(1).map((category) => ({
     category,
@@ -1749,18 +1427,18 @@ function renderMenu() {
   })).filter((group) => group.items.length);
 
   if (!groups.length) {
-    $('menu-container').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>No encontramos eso</h3><p>Prueba con otro nombre o vuelve a ver todo el menú.</p></div>';
+    container.innerHTML = '<div class="empty-cart"><div class="empty-cart-icon">🔍</div><h3>No encontramos eso</h3><p>Prueba con otro nombre o vuelve a ver todo el menú.</p></div>';
     return;
   }
 
-  $('menu-container').innerHTML = groups.map((group) => `
+  container.innerHTML = groups.map((group) => `
     <section class="menu-section" id="cat-${escapeHtml(group.category)}">
       <div class="section-heading"><h3>${escapeHtml(group.category)}</h3><span>${group.items.length} opciones</span></div>
       <div class="product-grid">${group.items.map((product, index) => productCard(product, index)).join('')}</div>
     </section>
   `).join('');
 
-  $('menu-container').querySelectorAll('[data-add-product]').forEach((button) => {
+  container.querySelectorAll('[data-add-product]').forEach((button) => {
     button.addEventListener('click', () => openCustomization(Number(button.dataset.addProduct)));
   });
 }
@@ -1782,6 +1460,7 @@ function openCustomization(productId) {
 
 function renderCustomization() {
   const draft = currentDraft;
+  if (!draft) return;
   const product = draft.product;
   $('custom-title').textContent = product.name;
   $('custom-description').textContent = product.desc;
@@ -1804,7 +1483,7 @@ function renderCustomization() {
   sections.push(`
     <div class="option-group">
       <label class="option-label" for="draft-comment">Notas especiales o detalles para la barra</label>
-      <textarea class="textarea-field" id="draft-comment" placeholder="Ej: Poca azúcar, servido bien frío, cambiar una fruta..." style="min-height: 60px;">${escapeHtml(draft.comment || '')}</textarea>
+      <textarea class="textarea-field" id="draft-comment" placeholder="Ej: Poca azúcar, servido bien frío..." style="min-height: 60px;">${escapeHtml(draft.comment || '')}</textarea>
     </div>
   `);
 
@@ -1832,9 +1511,6 @@ function renderCustomization() {
   $('draft-weight')?.addEventListener('input', (event) => {
     draft.weight = event.target.value;
     renderCustomization();
-    const weightInput = $('draft-weight');
-    weightInput?.focus();
-    weightInput?.setSelectionRange(weightInput.value.length, weightInput.value.length);
   });
   $('draft-comment')?.addEventListener('input', (event) => {
     draft.comment = event.target.value;
@@ -1868,18 +1544,24 @@ function confirmCustomization() {
 
 function updateCart() {
   const total = cart.reduce((sum, item) => sum + productTotal(item), 0);
-  $('cart-count').textContent = cart.length;
-  $('dock-count').textContent = cart.length;
-  $('dock-total').textContent = money(total);
-  $('checkout-total').textContent = money(total);
-  $('cart-dock').classList.toggle('hidden', !cart.length);
-  $('checkout-panel').classList.toggle('hidden', !cart.length);
+  if ($('cart-count')) $('cart-count').textContent = cart.length;
+  if ($('dock-count')) $('dock-count').textContent = cart.length;
+  if ($('dock-total')) $('dock-total').textContent = money(total);
+  if ($('checkout-total')) $('checkout-total').textContent = money(total);
+  
+  const cartDock = $('cart-dock');
+  const checkoutPanel = $('checkout-panel');
+  if (cartDock) cartDock.classList.toggle('hidden', !cart.length);
+  if (checkoutPanel) checkoutPanel.classList.toggle('hidden', !cart.length);
+
+  const cartItemsContainer = $('cart-items');
+  if (!cartItemsContainer) return;
 
   if (!cart.length) {
-    $('cart-items').innerHTML = '<div class="empty-cart"><div class="empty-cart-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>Aquí empieza lo bueno</h3><p>Agrega un bowl, un jugo o ese antojo que te está llamando.</p></div>';
+    cartItemsContainer.innerHTML = '<div class="empty-cart"><div class="empty-cart-icon">🛒</div><h3>Aquí empieza lo bueno</h3><p>Agrega un bowl, un jugo o ese antojo que te está llamando.</p></div>';
     return;
   }
-  $('cart-items').innerHTML = cart.map((item) => {
+  cartItemsContainer.innerHTML = cart.map((item) => {
     const details = [
       item.selectedSize?.name,
       item.selectedAddons?.length ? `Extra: ${item.selectedAddons.map((addon) => addon.name).join(', ')}` : '',
@@ -1894,11 +1576,11 @@ function updateCart() {
     </div>`;
   }).join('');
 
-  $('cart-items').querySelectorAll('[data-remove-cart]').forEach((button) => button.addEventListener('click', () => {
+  cartItemsContainer.querySelectorAll('[data-remove-cart]').forEach((button) => button.addEventListener('click', () => {
     cart = cart.filter((item) => item.cartId !== button.dataset.removeCart);
     updateCart();
   }));
-  $('cart-items').querySelectorAll('[data-duplicate-cart]').forEach((button) => button.addEventListener('click', () => {
+  cartItemsContainer.querySelectorAll('[data-duplicate-cart]').forEach((button) => button.addEventListener('click', () => {
     const item = cart.find((entry) => entry.cartId === button.dataset.duplicateCart);
     if (item) cart.push({ ...item, cartId: `${item.cartId}-${Date.now()}` });
     updateCart();
@@ -1907,24 +1589,20 @@ function updateCart() {
 
 function selectDelivery(type) {
   delivery = type;
-  $('pickup-option').classList.toggle('selected', type === 'pickup');
-  $('delivery-option').classList.toggle('selected', type === 'delivery');
-  $('customer-address').classList.toggle('hidden', type !== 'delivery');
+  $('pickup-option')?.classList.toggle('selected', type === 'pickup');
+  $('delivery-option')?.classList.toggle('selected', type === 'delivery');
+  $('customer-address')?.classList.toggle('hidden', type !== 'delivery');
 }
 
 function sendOrder() {
   if (!cart.length) return;
-  const name = $('customer-name').value.trim();
-  const cedula = $('customer-cedula').value.trim();
-  const phone = $('customer-phone').value.trim();
-  const address = $('customer-address').value.trim();
+  const name = $('customer-name')?.value.trim() || '';
+  const cedula = $('customer-cedula')?.value.trim() || '';
+  const phone = $('customer-phone')?.value.trim() || '';
+  const address = $('customer-address')?.value.trim() || '';
 
   if (!name || !cedula || !phone || !paymentMethod || (delivery === 'delivery' && !address)) {
     showToast('Completa todos tus datos y el método de pago.');
-    return;
-  }
-  if (!/^\d{11}$/.test(phone)) {
-    showToast('El teléfono debe contener exactamente 11 dígitos.');
     return;
   }
   const lines = cart.map((item, index) => {
@@ -1944,46 +1622,48 @@ function sendOrder() {
 }
 
 function openLayer(id) {
-  $('backdrop').classList.remove('hidden');
-  $(id).classList.remove('hidden');
+  $('backdrop')?.classList.remove('hidden');
+  $(id)?.classList.remove('hidden');
 }
 function closeLayer(id) {
-  $(id).classList.add('hidden');
-  const anyOpen = ['cart-drawer', 'customization-modal', 'login-modal', 'product-modal', 'code-modal'].some((layer) => !$(layer).classList.contains('hidden'));
-  if (!anyOpen) $('backdrop').classList.add('hidden');
+  $(id)?.classList.add('hidden');
+  const anyOpen = ['cart-drawer', 'customization-modal', 'login-modal', 'product-modal', 'code-modal'].some((layer) => !$(layer)?.classList.contains('hidden'));
+  if (!anyOpen) $('backdrop')?.classList.add('hidden');
 }
 function closeAllLayers() {
-  ['cart-drawer', 'customization-modal', 'login-modal', 'product-modal', 'code-modal'].forEach((id) => $(id).classList.add('hidden'));
-  $('backdrop').classList.add('hidden');
+  ['cart-drawer', 'customization-modal', 'login-modal', 'product-modal', 'code-modal'].forEach((id) => $(id)?.classList.add('hidden'));
+  $('backdrop')?.classList.add('hidden');
 }
 
 let isAdminSessionActive = false;
 
 function showAdmin() {
-  $('customer-view').classList.add('hidden');
-  $('cart-dock').classList.add('hidden');
-  $('admin-view').classList.remove('hidden');
+  $('customer-view')?.classList.add('hidden');
+  $('cart-dock')?.classList.add('hidden');
+  $('admin-view')?.classList.remove('hidden');
   renderAdminTable();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function showMenu() {
-  $('admin-view').classList.add('hidden');
-  $('customer-view').classList.remove('hidden');
+  $('admin-view')?.classList.add('hidden');
+  $('customer-view')?.classList.remove('hidden');
   updateCart();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function renderAdminTable() {
-  $('admin-product-count').textContent = products.length;
-  $('admin-table-body').innerHTML = products.map((product) => `
+  if ($('admin-product-count')) $('admin-product-count').textContent = products.length;
+  const tbody = $('admin-table-body');
+  if (!tbody) return;
+  tbody.innerHTML = products.map((product) => `
     <tr>
       <td><div class="table-product"><span class="table-thumb">${escapeHtml(initials(product.name))}</span><div><strong>${escapeHtml(product.name)}</strong><small>${product.isWeight ? 'Venta por kg' : 'Precio fijo'}</small></div></div></td>
       <td>${escapeHtml(product.category)}</td>
       <td>${money(product.price)}</td>
-      <td><div class="table-actions"><button class="small-action" data-edit-product="${product.id}" type="button" aria-label="Editar">✎</button><button class="small-action danger" data-delete-product="${product.id}" type="button" aria-label="Eliminar">×</button></div></td>
+      <td><div class="table-actions"><button class="small-action" data-edit-product="${product.id}" type="button">✎</button><button class="small-action danger" data-delete-product="${product.id}" type="button">×</button></div></td>
     </tr>
   `).join('');
-  $('admin-table-body').querySelectorAll('[data-edit-product]').forEach((button) => button.addEventListener('click', () => openProductForm(Number(button.dataset.editProduct))));
-  $('admin-table-body').querySelectorAll('[data-delete-product]').forEach((button) => button.addEventListener('click', () => {
+  tbody.querySelectorAll('[data-edit-product]').forEach((button) => button.addEventListener('click', () => openProductForm(Number(button.dataset.editProduct))));
+  tbody.querySelectorAll('[data-delete-product]').forEach((button) => button.addEventListener('click', () => {
     const product = products.find((item) => item.id === Number(button.dataset.deleteProduct));
     if (product && window.confirm(`¿Eliminar ${product.name}?`)) {
       products = products.filter((item) => item.id !== product.id);
@@ -1995,44 +1675,41 @@ function renderAdminTable() {
 }
 
 function populateProductCategories() {
-  ('product-category').innerHTML = categories.slice(1).map((category) => `<option>${escapeHtml(category)}</option>`).join('');
+  const prodCatSelect = $('product-category');
+  if (prodCatSelect) {
+    prodCatSelect.innerHTML = categories.slice(1).map((category) => `<option>${escapeHtml(category)}</option>`).join('');
+  }
 }
 
 function openProductForm(productId = 0) {
   const product = products.find((item) => item.id === productId);
-  $('product-title').textContent = product ? 'Editar producto' : 'Nuevo producto';
-  $('product-id').value = product?.id || '';
-  $('product-name').value = product?.name || '';
-  $('product-category').value = product?.category || 'Especiales';
-  $('product-price').value = product?.price ?? '';
-  $('product-image').value = product?.image || '';
-  $('product-description').value = product?.desc || '';
-  $('product-weight').checked = Boolean(product?.isWeight);
-  $('product-sizes').value = (product?.sizes || []).map((s) => `${s.name}: ${s.price}`).join(', ');
-  $('product-addons').value = (product?.addons || []).map((a) => `${a.name}: ${a.price}`).join(', ');
-  $('product-removals').value = (product?.removals || []).join(', ');
+  if ($('product-title')) $('product-title').textContent = product ? 'Editar producto' : 'Nuevo producto';
+  if ($('product-id')) $('product-id').value = product?.id || '';
+  if ($('product-name')) $('product-name').value = product?.name || '';
+  if ($('product-category')) $('product-category').value = product?.category || 'Especiales';
+  if ($('product-price')) $('product-price').value = product?.price ?? '';
+  if ($('product-image')) $('product-image').value = product?.image || '';
+  if ($('product-description')) $('product-description').value = product?.desc || '';
+  if ($('product-weight')) $('product-weight').checked = Boolean(product?.isWeight);
+  if ($('product-sizes')) $('product-sizes').value = (product?.sizes || []).map((s) => `${s.name}: ${s.price}`).join(', ');
+  if ($('product-addons')) $('product-addons').value = (product?.addons || []).map((a) => `${a.name}: ${a.price}`).join(', ');
+  if ($('product-removals')) $('product-removals').value = (product?.removals || []).join(', ');
   
   openLayer('product-modal');
 }
 
-function showGeneratedCode() {
-  const codeString = `const defaultProducts = ${JSON.stringify(products, null, 2)};`;
-  $('code-output').value = codeString;
-  openLayer('code-modal');
-}
-
 function bindEvents() {
-  $('search-input').addEventListener('input', (event) => { searchText = event.target.value; renderMenu(); });
-  $('brand-home').addEventListener('click', () => { activeCategory = 'Todos'; searchText = ''; $('search-input').value = ''; renderCategories(); renderMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  $('cart-button').addEventListener('click', () => openLayer('cart-drawer'));
-  $('dock-button').addEventListener('click', () => openLayer('cart-drawer'));
-  $('close-cart').addEventListener('click', () => closeLayer('cart-drawer'));
-  $('backdrop').addEventListener('click', closeAllLayers);
-  $('close-customization').addEventListener('click', () => closeLayer('customization-modal'));
-  $('cancel-customization').addEventListener('click', () => closeLayer('customization-modal'));
-  $('confirm-customization').addEventListener('click', confirmCustomization);
-  $('pickup-option').addEventListener('click', () => selectDelivery('pickup'));
-  $('delivery-option').addEventListener('click', () => selectDelivery('delivery'));
+  $('search-input')?.addEventListener('input', (event) => { searchText = event.target.value; renderMenu(); });
+  $('brand-home')?.addEventListener('click', () => { activeCategory = 'Todos'; searchText = ''; if ($('search-input')) $('search-input').value = ''; renderCategories(); renderMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  $('cart-button')?.addEventListener('click', () => openLayer('cart-drawer'));
+  $('dock-button')?.addEventListener('click', () => openLayer('cart-drawer'));
+  $('close-cart')?.addEventListener('click', () => closeLayer('cart-drawer'));
+  $('backdrop')?.addEventListener('click', closeAllLayers);
+  $('close-customization')?.addEventListener('click', () => closeLayer('customization-modal'));
+  $('cancel-customization')?.addEventListener('click', () => closeLayer('customization-modal'));
+  $('confirm-customization')?.addEventListener('click', confirmCustomization);
+  $('pickup-option')?.addEventListener('click', () => selectDelivery('pickup'));
+  $('delivery-option')?.addEventListener('click', () => selectDelivery('delivery'));
   
   const paymentButtons = document.querySelectorAll('#payment-options .payment-card');
   paymentButtons.forEach((btn) => {
@@ -2043,86 +1720,57 @@ function bindEvents() {
     });
   });
 
-  $('send-order').addEventListener('click', sendOrder);
-  $('admin-button').addEventListener('click', () => {
+  $('send-order')?.addEventListener('click', sendOrder);
+  $('admin-button')?.addEventListener('click', () => {
     if (isAdminSessionActive) showAdmin();
     else openLayer('login-modal');
   });
-  $('close-login').addEventListener('click', () => closeLayer('login-modal'));
-  $('cancel-login').addEventListener('click', () => closeLayer('login-modal'));
+  $('close-login')?.addEventListener('click', () => closeLayer('login-modal'));
+  $('cancel-login')?.addEventListener('click', () => closeLayer('login-modal'));
   
-  $('login-form').addEventListener('submit', (event) => {
+  $('login-form')?.addEventListener('submit', (event) => {
     event.preventDefault();
-    const userInput = ($('login-user').value || '').trim().toUpperCase();
-    const passInput = ($('login-password').value || '').trim();
+    const userInput = ($('login-user')?.value || '').trim().toUpperCase();
+    const passInput = ($('login-password')?.value || '').trim();
 
-    const authOk = window.AuthModule ? window.AuthModule.login(userInput, passInput) : false;
     const fallbackOk = (userInput === 'RP' || userInput === 'ADMIN') && passInput === '3008';
 
-    if (authOk || fallbackOk) {
+    if (fallbackOk) {
       isAdminSessionActive = true;
-      $('login-error').classList.add('hidden');
-      $('login-user').value = '';
-      $('login-password').value = '';
+      $('login-error')?.classList.add('hidden');
+      if ($('login-user')) $('login-user').value = '';
+      if ($('login-password')) $('login-password').value = '';
       closeLayer('login-modal');
       showAdmin();
     } else {
-      $('login-error').classList.remove('hidden');
+      $('login-error')?.classList.remove('hidden');
     }
   });
 
-  ['back-to-menu', 'return-menu', 'admin-brand-home'].forEach((id) => $(id).addEventListener('click', showMenu));
-  $('logout-button').addEventListener('click', () => { isAdminSessionActive = false; showMenu(); });
-  $('new-product').addEventListener('click', () => openProductForm());
-  $('close-product').addEventListener('click', () => closeLayer('product-modal'));
-  $('cancel-product').addEventListener('click', () => closeLayer('product-modal'));
-  
-  $('close-code').addEventListener('click', () => closeLayer('code-modal'));
-  $('cancel-code').addEventListener('click', () => closeLayer('code-modal'));
-  $('copy-code-button').addEventListener('click', () => {
-    const codeArea = $('code-output');
-    codeArea.select();
-    navigator.clipboard.writeText(codeArea.value).then(() => {
-      showToast('Código copiado al portapapeles.');
-      closeLayer('code-modal');
-    }).catch(() => {
-      showToast('No se pudo copiar automáticamente.');
-    });
-  });
+  ['back-to-menu', 'return-menu', 'admin-brand-home'].forEach((id) => $(id)?.addEventListener('click', showMenu));
+  $('logout-button')?.addEventListener('click', () => { isAdminSessionActive = false; showMenu(); });
+  $('new-product')?.addEventListener('click', () => openProductForm());
+  $('close-product')?.addEventListener('click', () => closeLayer('product-modal'));
+  $('cancel-product')?.addEventListener('click', () => closeLayer('product-modal'));
 
-  $('product-form').addEventListener('submit', (event) => {
+  $('product-form')?.addEventListener('submit', (event) => {
     event.preventDefault();
     const id = Number($('product-id').value);
     
     const sizesRaw = $('product-sizes').value.trim();
-    let parsedSizes = [];
-    if (sizesRaw) {
-      parsedSizes = sizesRaw.split(',').map((part) => {
-        const [name, priceStr] = part.split(':').map((str) => str.trim());
-        if (name) {
-          return { name, price: Number(priceStr) || 0 };
-        }
-        return null;
-      }).filter(Boolean);
-    }
+    let parsedSizes = sizesRaw ? sizesRaw.split(',').map((part) => {
+      const [name, priceStr] = part.split(':').map((str) => str.trim());
+      return name ? { name, price: Number(priceStr) || 0 } : null;
+    }).filter(Boolean) : [];
 
     const addonsRaw = $('product-addons').value.trim();
-    let parsedAddons = [];
-    if (addonsRaw) {
-      parsedAddons = addonsRaw.split(',').map((part) => {
-        const [name, priceStr] = part.split(':').map((str) => str.trim());
-        if (name) {
-          return { name, price: Number(priceStr) || 0 };
-        }
-        return null;
-      }).filter(Boolean);
-    }
+    let parsedAddons = addonsRaw ? addonsRaw.split(',').map((part) => {
+      const [name, priceStr] = part.split(':').map((str) => str.trim());
+      return name ? { name, price: Number(priceStr) || 0 } : null;
+    }).filter(Boolean) : [];
 
     const removalsRaw = $('product-removals').value.trim();
-    let parsedRemovals = [];
-    if (removalsRaw) {
-      parsedRemovals = removalsRaw.split(',').map((str) => str.trim()).filter(Boolean);
-    }
+    let parsedRemovals = removalsRaw ? removalsRaw.split(',').map((str) => str.trim()).filter(Boolean) : [];
 
     const next = {
       id: id || Date.now(),
@@ -2147,7 +1795,6 @@ function bindEvents() {
     renderAdminTable();
     renderMenu();
     showToast('Menú actualizado.');
-    showGeneratedCode();
   });
 }
 
