@@ -22,7 +22,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 4.5,
-    "image": "",
+    "image": "image/Jmora.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -38,7 +38,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3,
-    "image": "",
+    "image": "image/Jpiña.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -54,7 +54,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 4.5,
-    "image": "",
+    "image": "image/Jparchita.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -70,7 +70,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 4.5,
-    "image": "",
+    "image": "image/Jguanabana.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -86,7 +86,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3.5,
-    "image": "",
+    "image": "image/Jmango.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -118,7 +118,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3,
-    "image": "",
+    "image": "image/Jmelon.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -134,7 +134,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3,
-    "image": "",
+    "image": "image/Jpatilla.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -150,7 +150,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 2.5,
-    "image": "",
+    "image": "image/Jguayaba.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -166,7 +166,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3,
-    "image": "",
+    "image": "image/Jnaranja.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -186,7 +186,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 3,
-    "image": "",
+    "image": "image/Jnaranja.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -206,7 +206,7 @@ let products = [
     "category": "Jugos Básicos",
     "desc": "",
     "price": 6,
-    "image": "",
+    "image": "image/Jkiwi.jpg",
     "isWeight": false,
     "addons": [
       { "name": "Leche", "price": 1 },
@@ -224,7 +224,11 @@ let products = [
   "price": 4.5,
   "image": "image/Jmelocoton.jpg",
   "isWeight": false,
-  "addons": [],
+  "addons": [
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
+    ],
   "removals": [
     "Sin azucar"
   ],
@@ -238,7 +242,11 @@ let products = [
   "price": 4.5,
   "image": "image/Jfresa.jpg",
   "isWeight": false,
-  "addons": [],
+ "addons": [
+      { "name": "Leche", "price": 1 },
+      { "name": "Yogurt", "price": 1.5 },
+      { "name": "Vainilla", "price": 0.2 }
+    ],
   "removals": [
     "Sin azucar"
   ],
@@ -615,10 +623,10 @@ let products = [
   {
     "id": 1794185563205,
     "name": "Limonada de Hierbabuena",
-    "category": "Especiales",
+    "category": "Limonadas",
     "desc": "",
     "price": 2.5,
-    "image": "image/limonadah.jpg",
+    "image": "image/Limonadah.jpg",
     "isWeight": false,
     "addons": [],
     "removals": ["Sin azucar"],
@@ -630,7 +638,7 @@ let products = [
     "category": "Limonadas",
     "desc": "",
     "price": 4,
-    "image": "image/Limonadasp.jpg",
+    "image": "image/Limonadap.jpg",
     "isWeight": false,
     "addons": [],
     "removals": ["Sin azucar"],
@@ -958,9 +966,9 @@ let products = [
     "id": 1794332704987,
     "name": "Ice Coffe Latte",
     "category": "Cafés",
-    "desc": "image/Icelatte.jpg",
+    "desc": "",
     "price": 6,
-    "image": "",
+    "image": "image/Icelatte.jpg",
     "isWeight": false,
     "addons": [],
     "removals": [],
@@ -1132,9 +1140,9 @@ let products = [
     "id": 1794334231750,
     "name": "Omelette",
     "category": "Sandwiches",
-    "desc": "image/Omelette.jpg",
+    "desc": "",
     "price": 7,
-    "image": "",
+    "image": "image/Omelette.jpg",
     "isWeight": false,
     "addons": [],
     "removals": [],
@@ -1147,9 +1155,9 @@ let products = [
     "id": 1794334284174,
     "name": "Bowl de Yogurt",
     "category": "Bowl",
-    "desc": "image/Bowl.jpg",
+    "desc": "",
     "price": 12,
-    "image": "",
+    "image": "image/Bowl.jpg",
     "isWeight": false,
     "addons": [],
     "removals": [],
