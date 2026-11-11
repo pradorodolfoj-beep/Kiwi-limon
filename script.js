@@ -860,7 +860,7 @@ const defaultProducts = [
   {
     "id": 1794185563205,
     "name": "Limonada de Hierbabuena",
-    "category": "Limonadas",
+    "category": "Especiales",
     "desc": "",
     "price": 2.5,
     "image": "image/limonadah.jpg",
