@@ -229,7 +229,7 @@ let products = [
     "Sin azucar"
   ],
   "sizes": []
-  }
+  },
   {
   "id": 1794422733058,
   "name": "Jugo de Fresa",
@@ -243,7 +243,7 @@ let products = [
     "Sin azucar"
   ],
   "sizes": []
-  }
+  },
   {
     "id": 1794180586544,
     "name": "Duplicado Fresa Parchita",
